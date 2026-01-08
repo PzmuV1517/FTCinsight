@@ -146,12 +146,6 @@ const PageTeamInsightsTable = ({
             formatEPACell(data.year.percentiles.endgame_points, info, disableHighlight),
           header: "Endgame EPA",
         }),
-      year == CURR_YEAR &&
-        columnHelper.accessor("next_event_name", {
-          cell: (info) =>
-            EventLink({ key: info.row.original.next_event_key, event: info.getValue() }),
-          header: "Next Event",
-        }),
       columnHelper.accessor("record", {
         cell: (info) => formatCell(info),
         header: "Record",
@@ -219,12 +213,6 @@ const PageTeamInsightsTable = ({
         detailedColumnHelper.accessor("rp_3_epa", {
           cell: (info) => formatEPACell(data.year.percentiles.rp_3, info, disableHighlight),
           header: RP_NAMES[year][2],
-        }),
-      year == CURR_YEAR &&
-        detailedColumnHelper.accessor("next_event_name", {
-          cell: (info) =>
-            EventLink({ key: info.row.original.next_event_key, event: info.getValue() }),
-          header: "Next Event",
         }),
       detailedColumnHelper.accessor("record", {
         cell: (info) => formatCell(info),

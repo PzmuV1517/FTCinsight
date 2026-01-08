@@ -265,6 +265,28 @@ def write_team_events(team_events: List[Dict[str, Any]]) -> int:
         return 0
     
     from src.db.models.team_event import TeamEventORM
+    from src.types.enums import EventStatus, FTCEventType
+    
+    # Ensure type and status have valid default values
+    for te in team_events:
+        te_type = te.get("type", "other")
+        if not te_type or te_type == "":
+            te["type"] = FTCEventType.OTHER
+        elif isinstance(te_type, str):
+            try:
+                te["type"] = FTCEventType(te_type)
+            except ValueError:
+                te["type"] = FTCEventType.OTHER
+        
+        te_status = te.get("status", "Completed")
+        if not te_status or te_status == "":
+            te["status"] = EventStatus.COMPLETED
+        elif isinstance(te_status, str):
+            try:
+                te["status"] = EventStatus(te_status)
+            except ValueError:
+                te["status"] = EventStatus.COMPLETED
+    
     records = [_prepare_record(TeamEventORM, te) for te in team_events]
     return _bulk_upsert(TeamEventORM, records, ['team', 'event'])
 

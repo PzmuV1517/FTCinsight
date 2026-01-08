@@ -11,7 +11,7 @@ export const BUCKET_URL = PROD
   : "";
 
 // FTC Season Configuration
-export const CURR_YEAR = 2025; // DECODE season (2025-2026)
+export const CURR_YEAR = 2026; // DECODE season (2025-2026)
 export const CURR_WEEK = 1;
 
 // Minimum FTC team number (teams start from higher numbers in FTC)

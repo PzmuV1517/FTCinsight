@@ -81,7 +81,98 @@ def calculate_epa(
             "epa_start": prior_epa,
             "count": 0,
         }
+    return calculate_epa_impl(matches, team_num, prior_epa, k_factor)
+
+
+def calculate_win_prob(red_epa: float, blue_epa: float, score_sd: float) -> float:
+    """
+    Calculate win probability for red alliance based on EPA difference.
+    Uses a logistic function similar to Elo rating system.
     
+    Args:
+        red_epa: Combined EPA of red alliance
+        blue_epa: Combined EPA of blue alliance
+        score_sd: Standard deviation of scores for the year
+    
+    Returns:
+        Probability that red alliance wins (0.0 to 1.0)
+    """
+    if score_sd <= 0:
+        score_sd = 50  # Default fallback
+    
+    # Normalize the EPA difference by score_sd
+    # Each team contributes ~half their EPA to alliance score
+    red_pred = red_epa * 2  # 2 teams on alliance
+    blue_pred = blue_epa * 2
+    
+    diff = red_pred - blue_pred
+    norm_diff = diff / score_sd
+    
+    # Logistic function: k = -5/8 tuned for FRC, adjust for FTC
+    k = -0.8  # Slightly more extreme for FTC
+    win_prob = 1 / (1 + 10 ** (k * norm_diff))
+    
+    # Clamp to reasonable range
+    return max(0.01, min(0.99, round(win_prob, 4)))
+
+
+def add_match_predictions(
+    matches: List[Dict],
+    team_epas: Dict[int, float],
+    score_sd: float,
+) -> None:
+    """
+    Add win probability and score predictions to matches in-place.
+    
+    Args:
+        matches: List of match dictionaries to update
+        team_epas: Dictionary mapping team numbers to EPA values
+        score_sd: Standard deviation of scores for the year
+    """
+    default_epa = 20.0
+    
+    for match in matches:
+        red_1 = match.get("red_1")
+        red_2 = match.get("red_2")
+        blue_1 = match.get("blue_1")
+        blue_2 = match.get("blue_2")
+        
+        # Get EPAs, default to average if team not found
+        red_1_epa = team_epas.get(red_1, default_epa) if red_1 else default_epa
+        red_2_epa = team_epas.get(red_2, default_epa) if red_2 else default_epa
+        blue_1_epa = team_epas.get(blue_1, default_epa) if blue_1 else default_epa
+        blue_2_epa = team_epas.get(blue_2, default_epa) if blue_2 else default_epa
+        
+        red_total_epa = red_1_epa + red_2_epa
+        blue_total_epa = blue_1_epa + blue_2_epa
+        
+        # Calculate win probability
+        win_prob = calculate_win_prob(red_total_epa / 2, blue_total_epa / 2, score_sd)
+        
+        # Predict scores (EPA represents points above average, so add to mean)
+        # Average match has ~score_mean points per alliance
+        score_mean = score_sd * 1.5  # Rough approximation
+        red_pred = round(red_total_epa + score_mean, 2)
+        blue_pred = round(blue_total_epa + score_mean, 2)
+        
+        # Set predictions on match
+        match["epa_win_prob"] = win_prob
+        match["epa_red_score_pred"] = red_pred
+        match["epa_blue_score_pred"] = blue_pred
+        
+        # Predicted winner
+        match["epa_winner"] = MatchWinner.RED.value if win_prob >= 0.5 else MatchWinner.BLUE.value
+
+
+def calculate_epa_impl(
+    matches: List[Dict],
+    team_num: int,
+    prior_epa: float = 20.0,
+    k_factor: float = 0.2,
+) -> Dict[str, float]:
+    """
+    Calculate EPA implementation - does the actual calculation.
+    """
     epa = prior_epa
     auto_epa = prior_epa * 0.3
     teleop_epa = prior_epa * 0.5
@@ -194,20 +285,48 @@ def calculate_record(matches: List[Dict], team_num: int) -> Dict[str, int]:
 
 
 def determine_event_status(matches: List[Dict], event_data: Dict) -> str:
-    """Determine the status of an event based on its matches"""
+    """Determine the status of an event based on its dates"""
+    from datetime import datetime, date
+    
+    today = date.today()
+    
+    # Parse event dates
+    start_date_str = event_data.get("start_date", "")
+    end_date_str = event_data.get("end_date", "")
+    
+    try:
+        if start_date_str:
+            start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
+        else:
+            start_date = None
+        if end_date_str:
+            end_date = datetime.strptime(end_date_str, "%Y-%m-%d").date()
+        else:
+            end_date = None
+    except ValueError:
+        # If date parsing fails, fall back to match-based logic
+        start_date = None
+        end_date = None
+    
+    # Determine status based on dates
+    if start_date and end_date:
+        if today < start_date:
+            return EventStatus.UPCOMING.value
+        elif today > end_date:
+            return EventStatus.COMPLETED.value
+        else:
+            return EventStatus.ONGOING.value
+    
+    # Fallback to match-based logic if dates not available
     if not matches:
         return EventStatus.UPCOMING.value
     
     completed = sum(1 for m in matches if m.get("status") == MatchStatus.COMPLETED.value)
     total = len(matches)
     
-    # Check if playoffs have finished
-    playoff_matches = [m for m in matches if m.get("comp_level") != CompLevel.QUAL.value]
-    finals = [m for m in playoff_matches if m.get("comp_level") == CompLevel.FINAL.value]
-    
     if completed == 0:
         return EventStatus.UPCOMING.value
-    elif completed < total or not finals:
+    elif completed < total:
         return EventStatus.ONGOING.value
     else:
         return EventStatus.COMPLETED.value
@@ -237,12 +356,37 @@ def process_single_event(event: Dict, season: int, cache: bool) -> Dict[str, Any
         event_teams, _ = get_event_teams(season, event_code, cache=cache)
         result["event_teams"] = event_teams
         
-        # Create team-event records
+        # Determine event status based on dates
+        event_status = determine_event_status([], event)
+        
+        # Create team-event records with all required fields
         for team_num in event_teams:
             result["team_events"].append({
                 "team": team_num,
                 "event": event_key,
                 "year": season,
+                "time": event.get("time", 0),
+                "team_name": "",  # Will be populated later from teams data
+                "event_name": event.get("name", ""),
+                "country": event.get("country"),
+                "state": event.get("state"),
+                "district": event.get("district"),
+                "type": event.get("type", "other"),
+                "week": event.get("week", 0),
+                "status": event_status,
+                "first_event": False,  # Will be calculated later
+                "wins": 0,
+                "losses": 0,
+                "ties": 0,
+                "count": 0,
+                "winrate": 0,
+                "qual_wins": 0,
+                "qual_losses": 0,
+                "qual_ties": 0,
+                "qual_count": 0,
+                "qual_winrate": 0,
+                "rps": 0,
+                "rps_per_match": 0,
             })
         
         # Get matches
@@ -389,6 +533,87 @@ def process_season(
     
     timer.log(f"Processed all {len(events_data)} events, {len(all_matches)} matches")
     
+    # Create team name lookup
+    team_name_lookup = {team["team"]: team.get("name", f"Team {team['team']}") for team in teams_data}
+    
+    # Group matches by event for team-event record calculation
+    event_matches: Dict[str, List[Dict]] = defaultdict(list)
+    for match in all_matches:
+        event_key = match.get("event")
+        if event_key:
+            event_matches[event_key].append(match)
+    
+    # Update team_events with team names and match records
+    for te in all_team_events:
+        team_num = te["team"]
+        event_key = te["event"]
+        
+        # Set team name
+        te["team_name"] = team_name_lookup.get(team_num, f"Team {team_num}")
+        
+        # Calculate match record for this team at this event
+        event_match_list = event_matches.get(event_key, [])
+        team_event_matches = [
+            m for m in event_match_list
+            if team_num in [m.get("red_1"), m.get("red_2"), m.get("blue_1"), m.get("blue_2")]
+        ]
+        
+        wins, losses, ties, count = 0, 0, 0, 0
+        qual_wins, qual_losses, qual_ties, qual_count = 0, 0, 0, 0
+        
+        for match in team_event_matches:
+            if match.get("status") != MatchStatus.COMPLETED.value:
+                continue
+            
+            red_teams = [match.get("red_1"), match.get("red_2")]
+            blue_teams = [match.get("blue_1"), match.get("blue_2")]
+            winner = match.get("winner")
+            is_qual = match.get("comp_level") == CompLevel.QUAL.value
+            
+            if team_num in red_teams:
+                if winner == MatchWinner.RED.value:
+                    wins += 1
+                    if is_qual:
+                        qual_wins += 1
+                elif winner == MatchWinner.BLUE.value:
+                    losses += 1
+                    if is_qual:
+                        qual_losses += 1
+                else:
+                    ties += 1
+                    if is_qual:
+                        qual_ties += 1
+            elif team_num in blue_teams:
+                if winner == MatchWinner.BLUE.value:
+                    wins += 1
+                    if is_qual:
+                        qual_wins += 1
+                elif winner == MatchWinner.RED.value:
+                    losses += 1
+                    if is_qual:
+                        qual_losses += 1
+                else:
+                    ties += 1
+                    if is_qual:
+                        qual_ties += 1
+            
+            count += 1
+            if is_qual:
+                qual_count += 1
+        
+        te["wins"] = wins
+        te["losses"] = losses
+        te["ties"] = ties
+        te["count"] = count
+        te["winrate"] = round(wins / count, 3) if count > 0 else 0
+        te["qual_wins"] = qual_wins
+        te["qual_losses"] = qual_losses
+        te["qual_ties"] = qual_ties
+        te["qual_count"] = qual_count
+        te["qual_winrate"] = round(qual_wins / qual_count, 3) if qual_count > 0 else 0
+    
+    timer.log(f"Updated {len(all_team_events)} team-event records with names and stats")
+    
     # 4. Calculate EPA and stats for each team
     print("\n[4/6] Calculating team statistics...")
     team_years_data: List[Dict] = []
@@ -470,6 +695,13 @@ def process_season(
     }
     
     timer.log("Calculated year statistics")
+    
+    # 5.5 Add match predictions using team EPAs
+    print("  Adding match predictions...")
+    team_epas = {ty["team"]: ty["epa"] for ty in team_years_data}
+    score_sd = year_data["score_sd"] if year_data["score_sd"] > 0 else 50
+    add_match_predictions(all_matches, team_epas, score_sd)
+    timer.log(f"Added predictions to {len(all_matches)} matches")
     
     # 6. Write everything to database
     print("\n[6/6] Writing to database...")
