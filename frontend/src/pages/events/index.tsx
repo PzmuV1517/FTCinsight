@@ -21,7 +21,7 @@ const InnerPage = () => {
   const { year: queryYear, week, country, state, district, search } = router.query;
 
   useEffect(() => {
-    document.title = "Events - Statbotics";
+    document.title = "Events - FTC Insight";
   }, []);
 
   const getFilters = useCallback(() => {

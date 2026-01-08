@@ -54,7 +54,7 @@ async function query(
 
   let buffer = null;
   try {
-    if (!checkBucket) {
+    if (!checkBucket || !BUCKET_URL) {
       throw new Error("Skip bucket check");
     }
     const fileName = apiPath.replace("?", ".").replace("&", ".");

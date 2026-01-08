@@ -16,18 +16,18 @@ exclude = '''
 '''
 
 [tool.poetry]
-name = "statbotics"
-version = "3.0.0"
-description = "Modernizing FRC Data Analytics"
-authors = ["Abhijit Gupta <avgupta456@gmail.com>"]
+name = "ftcinsight"
+version = "1.0.0"
+description = "Modernizing FTC Data Analytics"
+authors = ["FTC Insight Team"]
 license = "MIT License"
 
 readme = 'README.md'  # Markdown files are supported
 
-repository = "https://github.com/avgupta456/statbotics"
-homepage = "https://statbotics.io"
+repository = "https://github.com/your-repo/ftcinsight"
+homepage = "https://ftcinsight.org"
 
-keywords = ['FIRST', 'robotics', 'data', 'analysis', 'ranking']
+keywords = ['FIRST', 'FTC', 'robotics', 'data', 'analysis', 'ranking']
 
 [tool.poetry.dependencies]
 python = "^3.8"

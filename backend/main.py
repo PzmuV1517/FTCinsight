@@ -34,18 +34,18 @@ api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 
 
 app = FastAPI(
-    title="Statbotics REST API",
-    description="The REST API for Statbotics. Please be nice to our servers! If you are looking to do large-scale data science projects, use the CSV exports on the GitHub repo.",
+    title="FTC Insight REST API",
+    description="The REST API for FTC Insight - Data Analytics and Match Predictions for FIRST Tech Challenge. Please be nice to our servers! If you are looking to do large-scale data science projects, use the CSV exports on the GitHub repo.",
     version="3.0.0",
     # dependencies=[Security(get_api_key)],
     swagger_ui_parameters={"persistAuthorization": True},
 )
 
-# Removed CORS to enable website integrationss
+# Removed CORS to enable website integrations
 origins = [
     "http://localhost:3000",
-    "https://statbotics.io",
-    "https://www.statbotics.io",
+    "https://ftcinsight.org",
+    "https://www.ftcinsight.org",
 ]
 
 app.add_middleware(

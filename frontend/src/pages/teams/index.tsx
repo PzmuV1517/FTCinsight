@@ -22,7 +22,7 @@ const InnerPage = () => {
   const { year: queryYear, country, state, district } = router.query;
 
   useEffect(() => {
-    document.title = "Teams - Statbotics";
+    document.title = "Teams - FTC Insight";
   }, []);
 
   const getFilters = useCallback(() => {

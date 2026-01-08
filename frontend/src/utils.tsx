@@ -25,30 +25,13 @@ export const log = (...args: any[]) => {
 };
 
 export const readTBA = async (url: string) => {
-  const response = await fetch("https://www.thebluealliance.com/api/v3" + url, {
-    headers: { "X-TBA-Auth-Key": TBA_API_KEY },
-  });
-
-  if (response.status === 200) {
-    return response.json();
-  }
-
-  throw new Error("TBA Error: " + response.status);
+  // TBA is FRC-only, disabled for FTC Insight
+  throw new Error("TBA not available for FTC");
 };
 
 export const getMediaUrl = async (team: number, year: number) => {
-  const data = await readTBA(`/team/frc${team}/media/${year}`);
-  const image = data.filter((item: any) => item?.preferred)?.[0];
-  if (image?.type === "instagram-image") {
-    // if (image?.view_url) {
-    //   return `https://www.thebluealliance.com/${image?.direct_url}`;
-    // }
-    return null;
-  } else if (image?.type === "imgur") {
-    return image?.direct_url ?? null;
-  } else {
-    return null;
-  }
+  // TBA media not available for FTC teams
+  return null;
 };
 
 export const getMediaUrls = async (teams: number[], year: number) => {

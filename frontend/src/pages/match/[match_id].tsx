@@ -38,7 +38,7 @@ const InnerPage = () => {
 
   useEffect(() => {
     if (match_id) {
-      document.title = `${match_id} - Statbotics`;
+      document.title = `${match_id} - FTC Insight`;
     }
   }, [match_id]);
 

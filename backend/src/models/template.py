@@ -2,7 +2,7 @@ from typing import Dict, Optional, Tuple
 
 from src.db.models import Event, Match, TeamEvent, TeamMatch, TeamYear, Year
 from src.models.types import AlliancePred, Attribution, MatchPred
-from src.tba.constants import PLACEHOLDER_TEAMS
+from src.ftc.constants import PLACEHOLDER_TEAMS, ALLIANCE_SIZE
 from src.types.enums import MatchStatus
 
 
@@ -22,7 +22,7 @@ class Model:
     ) -> None:
         self.year_obj = year
         self.year_num = year.year
-        self.num_teams = 2 if year.year <= 2004 else 3
+        self.num_teams = ALLIANCE_SIZE  # FTC uses 2-team alliances
 
     def predict_match(
         self, match: Match, event: Event

@@ -1,7 +1,7 @@
 from typing import List, Optional
 
 from sqlalchemy.orm.session import Session as SessionType
-from sqlalchemy_cockroachdb import run_transaction  # type: ignore
+from src.db.main import run_transaction
 
 from src.db.main import Session
 from src.db.models.team_event import TeamEvent, TeamEventORM

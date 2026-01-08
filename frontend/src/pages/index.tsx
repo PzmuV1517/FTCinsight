@@ -25,13 +25,13 @@ export default function Home() {
             "text-transparent bg-clip-text bg-gradient-to-r from-gradientRed via-violet-500 to-gradientBlue"
           )}
         >
-          <div className="mb-1">Modernizing FRC</div>
+          <div className="mb-1">Modernizing FTC</div>
           <div className="mb-4">Data Analytics</div>
         </div>
         <div className="text-sm sm:text-base sm:p-4 xl:w-2/3 text-center mb-4">
           The <strong>Expected Points Added (EPA)</strong> metric is a highly predictive measure of
-          team performance. Use our live-updating data to find actionable insights or analyze
-          historical trends.
+          team performance. Use our live-updating data to find actionable insights for FIRST Tech Challenge
+          or analyze historical trends.
         </div>
         <div className="flex flex-row justify-center items-center">
           <Link

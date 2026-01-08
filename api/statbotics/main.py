@@ -16,13 +16,13 @@ from .constants import (
 )
 
 
-class Statbotics:
+class FTCInsight:
     """
-    Main Object for interfacing with the Statbotics API
+    Main Object for interfacing with the FTC Insight API
     """
 
     def __init__(self):
-        self.BASE_URL = "https://api.statbotics.io/v3"
+        self.BASE_URL = "https://api.ftcinsight.org/v3"
         # self.BASE_URL = "http://localhost:8000/v3"
         self.session = CacheControl(requests.Session())
 

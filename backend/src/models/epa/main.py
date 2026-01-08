@@ -17,7 +17,7 @@ from src.models.epa.math import SkewNormal
 # from src.models.epa.math import t_prob_gt_0
 from src.models.template import Model
 from src.models.types import AlliancePred, Attribution, MatchPred
-from src.tba.breakdown import all_keys
+from src.ftc.breakdown import all_keys, get_keys
 from src.types.enums import MatchWinner
 from src.utils.utils import r
 
@@ -96,13 +96,8 @@ class EPA(Model):
 
             pred_mean = post_process_breakdown(year, key, pred_mean, opp_pred_mean)
 
-            keys = all_keys[year]
+            # FTC doesn't have ranking points like FRC
             rp_1, rp_2, rp_3 = 0, 0, 0
-            if year >= 2016:
-                rp_1 = pred_mean[keys.index("rp_1")]
-                rp_2 = pred_mean[keys.index("rp_2")]
-                if year >= 2025:
-                    rp_3 = pred_mean[keys.index("rp_3")]
 
             rp_1s.append(rp_1)
             rp_2s.append(rp_2)

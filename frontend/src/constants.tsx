@@ -2,22 +2,48 @@ export const PROD = process.env.PROD === "True";
 
 // undici bug requires 127.0.0.1 instead of localhost
 export const BACKEND_URL = PROD
-  ? "https://api.statbotics.io/v3/site"
+  ? "https://api.ftcinsight.org/v3/site"
   : "http://127.0.0.1:8000/v3/site";
 
+// Disable bucket in dev mode - bucket doesn't exist yet
 export const BUCKET_URL = PROD
-  ? "https://storage.googleapis.com/site_v1"
-  : "https://storage.googleapis.com/site_dev_v1";
+  ? "https://storage.googleapis.com/ftcinsight_v1"
+  : "";
 
-export const TBA_API_KEY = "XeUIxlvO4CPc44NlLE3ncevDg7bAhp6CRy6zC9M2aQb2zGfys0M30eKwavFJSEJr";
-
-export const CURR_YEAR = 2026;
+// FTC Season Configuration
+export const CURR_YEAR = 2025; // DECODE season (2025-2026)
 export const CURR_WEEK = 1;
 
-// 9970 to 9999 are placeholder teams
-export const PLACEHOLDER_TEAMS = Array.from({ length: 30 }, (_, i) => 9970 + i);
+// Minimum FTC team number (teams start from higher numbers in FTC)
+export const MIN_TEAM_NUM = 1;
 
-export const BREAKDOWN_YEARS = [2024, 2025]; // TODO: implement 2016-2023
+// Placeholder teams (adjust as needed for FTC)
+export const PLACEHOLDER_TEAMS = Array.from({ length: 30 }, (_, i) => 99970 + i);
+
+// Years with detailed score breakdowns
+export const BREAKDOWN_YEARS = [2019, 2020, 2021, 2022, 2023, 2024];
+
+// FTC Tiebreaker Point names by season (equivalent to FRC's RP_NAMES)
+// FTC uses TBP (Tie Breaker Points) instead of Ranking Points
+export const RP_NAMES: { [key: number]: string[] } = {
+  2026: ["TBP1", "TBP2", "TBP3"], // Future season
+  2025: ["TBP1", "TBP2", "TBP3"], // INTO THE DEEP (current)
+  2024: ["TBP1", "TBP2"], // INTO THE DEEP
+  2023: ["TBP1", "TBP2"], // CENTERSTAGE
+  2022: ["TBP1", "TBP2"], // POWERPLAY
+  2021: ["TBP1", "TBP2"], // FREIGHT FRENZY
+  2020: ["TBP1", "TBP2"], // ULTIMATE GOAL
+  2019: ["TBP1", "TBP2"], // SKYSTONE
+  2018: ["TBP1", "TBP2"], // ROVER RUCKUS
+  2017: ["TBP1", "TBP2"], // RELIC RECOVERY
+  2016: ["TBP1", "TBP2"], // VELOCITY VORTEX
+};
+
+// Helper to safely get RP names with fallback
+export const getRPName = (year: number, index: number): string => {
+  const names = RP_NAMES[year] || RP_NAMES[2025] || ["TBP1", "TBP2", "TBP3"];
+  return names[index] || `TBP${index + 1}`;
+};
 
 export const CORRECT_COLOR = "#86CFA3";
 export const INCORRECT_COLOR = "#F77F84";
@@ -35,212 +61,185 @@ export const Category10Colors = [
   "#17becf",
 ];
 
-export const RP_KEYS: { [key: number]: string[] } = {
-  2016: ["defenses_rp", "tower_rp"],
-  2017: ["rotor_rp", "kpa_rp"],
-  2018: ["auto_rp", "climb_rp"],
-  2019: ["rocket_rp", "hab_rp"],
-  2020: ["cells_rp", "climb_rp"],
-  2022: ["cargo_rp", "hangar_rp"],
-  2023: ["links_rp", "activation_rp"],
-  2024: ["melody_rp", "ensemble_rp"],
-  2025: ["auto_rp", "coral_rp", "barge_rp"],
+// FTC Game Names by Season (year represents the start of the season)
+export const FTC_GAMES: { [key: number]: string } = {
+  2024: "INTO THE DEEP",
+  2023: "CENTERSTAGE",
+  2022: "POWERPLAY",
+  2021: "FREIGHT FRENZY",
+  2020: "ULTIMATE GOAL",
+  2019: "SKYSTONE",
+  2018: "ROVER RUCKUS",
+  2017: "RELIC RECOVERY",
+  2016: "VELOCITY VORTEX",
 };
 
-export const RP_NAMES: { [key: number]: string[] } = {
-  2016: ["Breach RP", "Capture RP"],
-  2017: ["Rotors RP", "Pressure RP"],
-  2018: ["Auto RP", "Climb RP"],
-  2019: ["Rocket RP", "HAB RP"],
-  2020: ["Generator RP", "Hang RP"],
-  2022: ["Cargo RP", "Hangar RP"],
-  2023: ["Links RP", "Activation RP"],
-  2024: ["Melody RP", "Ensemble RP"],
-  2025: ["Auto RP", "Coral RP", "Barge RP"],
-  // TODO: Update once official breakdown is released
-  2026: ["RP 1", "RP 2", "RP 3"],
+// FTC Event Types
+export const FTC_EVENT_TYPES: { [key: string]: string } = {
+  scrimmage: "Scrimmage",
+  league_meet: "League Meet",
+  qualifier: "Qualifier",
+  league_tournament: "League Tournament",
+  championship: "Championship",
+  super_qualifier: "Super Qualifier",
+  regional_championship: "Regional Championship",
+  first_championship: "FIRST Championship",
+  offseason: "Offseason",
+  other: "Other",
 };
 
-export const eventNameMap = {
-  "FIRST in Michigan State Championship presented by DTE Foundation": "FiM Champs - Overall",
-  "FIRST in Michigan State Championship presented by DTE Foundation - DTE ENERGY FOUNDATION Division":
-    "FiM Champs - DTE Energy Foundation Division",
-  "FIRST in Michigan State Championship presented by DTE Foundation - FORD Division":
-    "FiM Champs - Ford Division",
-  "FIRST in Michigan State Championship presented by DTE Foundation - APTIV Division":
-    "FiM Champs - Aptiv Division",
-  "FIRST in Michigan State Championship presented by DTE Foundation - CONSUMERS ENERGY Division":
-    "FiM Champs - Consumers Energy Division",
-  "New England FIRST District Championship": "NE Champs - Overall",
-  "New England FIRST District Championship - WILSON Division": "NE Champs - Wilson Division",
-  "New England FIRST District Championship - MEIR Division": "NE Champs - Meir Division",
-  "FIRST In Texas District Championship presented by Phillips 66": "FIT Champs - Overall",
-  "FIRST In Texas District Championship presented by Phillips 66 - APOLLO Division":
-    "FIT Champs - Apollo Division",
-  "FIRST In Texas District Championship presented by Phillips 66 - MERCURY Division":
-    "FIT Champs - Mercury Division",
-  "FIRST Ontario Provincial Championship": "Ontario Champs - Overall",
-  "FIRST Ontario Provincial Championship - SCIENCE Division": "Ontario Champs - Science Division",
-  "FIRST Ontario Provincial Championship - TECHNOLOGY Division":
-    "Ontario Champs - Technology Division",
-  "FIRST in Michigan State Championship": "FiM Champs - Overall",
-  "FIRST in Michigan State Championship - DTE Energy Foundation Division":
-    "FiM Champs - DTE Energy Foundation Division",
-  "FIRST in Michigan State Championship - Hemlock Semiconductor Division":
-    "FiM Champs - Hemlock Semiconductor Division",
-  "FIRST in Michigan State Championship - Consumers Energy Division":
-    "FiM Champs - Consumers Energy Division",
-  "FIRST in Michigan State Championship - Aptiv Division": "FiM Champs - Aptiv Division",
-  // "New England FIRST District Championship": "NE Champs - Overall",
-  "New England FIRST District Championship - Ganson Division": "NE Champs - Ganson Division",
-  "New England FIRST District Championship - Richardson Division":
-    "NE Champs - Richardson Division",
-  "New England FIRST District Championship - Ballard Division presented by Altair":
-    "NE Champs - Ballard Division",
-  "New England FIRST District Championship - Sosik Division presented by GE Aerospace":
-    "NE Champs - Sosik Division",
-  "FIRST In Texas District Championship": "FIT Champs - Overall",
-  "FIRST In Texas District Championship - Mercury Division": "FIT Champs - Mercury Division",
-  "FIRST In Texas District Championship - Apollo Division": "FIT Champs - Apollo Division",
-  // "FIRST Ontario Provincial Championship": "Ontario Champs - Overall",
-  "FIRST Ontario Provincial Championship - Science Division": "Ontario Champs - Science Division",
-  "FIRST Ontario Provincial Championship - Technology Division":
-    "Ontario Champs - Technology Division",
+// FTC Score Components by Season
+export const SCORE_COMPONENTS: { [key: number]: { key: string; name: string }[] } = {
+  2024: [
+    // INTO THE DEEP
+    { key: "auto_net_samples", name: "Auto Net Samples" },
+    { key: "auto_low_basket", name: "Auto Low Basket" },
+    { key: "auto_high_basket", name: "Auto High Basket" },
+    { key: "auto_low_chamber", name: "Auto Low Chamber" },
+    { key: "auto_high_chamber", name: "Auto High Chamber" },
+    { key: "teleop_net_samples", name: "TeleOp Net Samples" },
+    { key: "teleop_low_basket", name: "TeleOp Low Basket" },
+    { key: "teleop_high_basket", name: "TeleOp High Basket" },
+    { key: "teleop_low_chamber", name: "TeleOp Low Chamber" },
+    { key: "teleop_high_chamber", name: "TeleOp High Chamber" },
+    { key: "ascent_1", name: "Robot 1 Ascent" },
+    { key: "ascent_2", name: "Robot 2 Ascent" },
+  ],
+  2023: [
+    // CENTERSTAGE
+    { key: "auto_backstage", name: "Auto Backstage Pixels" },
+    { key: "auto_backdrop", name: "Auto Backdrop Pixels" },
+    { key: "purple_pixel_1", name: "Purple Pixel 1" },
+    { key: "purple_pixel_2", name: "Purple Pixel 2" },
+    { key: "yellow_pixel_1", name: "Yellow Pixel 1" },
+    { key: "yellow_pixel_2", name: "Yellow Pixel 2" },
+    { key: "teleop_backstage", name: "TeleOp Backstage" },
+    { key: "teleop_backdrop", name: "TeleOp Backdrop" },
+    { key: "mosaics", name: "Mosaics" },
+    { key: "set_line", name: "Set Lines" },
+    { key: "drone_1", name: "Drone 1" },
+    { key: "drone_2", name: "Drone 2" },
+    { key: "park_1", name: "Endgame Park 1" },
+    { key: "park_2", name: "Endgame Park 2" },
+  ],
+  2022: [
+    // POWERPLAY
+    { key: "auto_terminal", name: "Auto Terminal" },
+    { key: "auto_junctions", name: "Auto Junction Cones" },
+    { key: "auto_navigated", name: "Auto Navigated" },
+    { key: "teleop_terminal_near", name: "TeleOp Terminal Near" },
+    { key: "teleop_terminal_far", name: "TeleOp Terminal Far" },
+    { key: "teleop_junctions", name: "TeleOp Junction Cones" },
+    { key: "owned_junctions", name: "Owned Junctions" },
+    { key: "beacon_junctions", name: "Beacon Junctions" },
+    { key: "circuit", name: "Circuit" },
+  ],
+  2021: [
+    // FREIGHT FRENZY
+    { key: "auto_carousel", name: "Auto Carousel" },
+    { key: "auto_storage", name: "Auto Storage Freight" },
+    { key: "auto_freight", name: "Auto Freight" },
+    { key: "auto_parked", name: "Auto Parked" },
+    { key: "teleop_storage", name: "TeleOp Storage" },
+    { key: "teleop_freight", name: "TeleOp Freight" },
+    { key: "shared_freight", name: "Shared Freight" },
+    { key: "delivered", name: "Delivered" },
+    { key: "capped", name: "Capped" },
+    { key: "endgame_parked", name: "Endgame Parked" },
+  ],
+  2020: [
+    // ULTIMATE GOAL
+    { key: "auto_wobble", name: "Auto Wobble Goals" },
+    { key: "auto_powershots", name: "Auto Power Shots" },
+    { key: "auto_tower", name: "Auto Tower" },
+    { key: "auto_navigated", name: "Auto Navigated" },
+    { key: "teleop_tower", name: "TeleOp Tower" },
+    { key: "endgame_wobble", name: "Endgame Wobble Goals" },
+    { key: "endgame_rings", name: "Endgame Wobble Rings" },
+    { key: "endgame_powershots", name: "Endgame Power Shots" },
+  ],
+  2019: [
+    // SKYSTONE
+    { key: "auto_delivered", name: "Auto Delivered" },
+    { key: "auto_skystones", name: "Auto Skystones" },
+    { key: "auto_placed", name: "Auto Placed" },
+    { key: "auto_navigated", name: "Auto Navigated" },
+    { key: "teleop_delivered", name: "TeleOp Delivered" },
+    { key: "teleop_placed", name: "TeleOp Placed" },
+    { key: "skyscraper", name: "Tallest Skyscraper" },
+    { key: "foundation_moved", name: "Foundation Moved" },
+    { key: "capstone", name: "Capstone" },
+  ],
 };
 
-export const divisionToMainEvent = {
-  "2023micmp": "2023micmp",
-  "2023micmp1": "2023micmp",
-  "2023micmp2": "2023micmp",
-  "2023micmp3": "2023micmp",
-  "2023micmp4": "2023micmp",
-  "2023necmp": "2023necmp",
-  "2023necmp1": "2023necmp",
-  "2023necmp2": "2023necmp",
-  "2023txcmp": "2023txcmp",
-  "2023txcmp1": "2023txcmp",
-  "2023txcmp2": "2023txcmp",
-  "2023oncmp": "2023oncmp",
-  "2023oncmp1": "2023oncmp",
-  "2023oncmp2": "2023oncmp",
-  "2023cmptx": "2023cmptx",
-  "2023arc": "2023cmptx",
-  "2023cur": "2023cmptx",
-  "2023dal": "2023cmptx",
-  "2023gal": "2023cmptx",
-  "2023hop": "2023cmptx",
-  "2023joh": "2023cmptx",
-  "2023mil": "2023cmptx",
-  "2023new": "2023cmptx",
-  "2024micmp": "2024micmp",
-  "2024micmp1": "2024micmp",
-  "2024micmp2": "2024micmp",
-  "2024micmp3": "2024micmp",
-  "2024micmp4": "2024micmp",
-  "2024necmp": "2024necmp",
-  "2024necmp1": "2024necmp",
-  "2024necmp2": "2024necmp",
-  "2024txcmp": "2024txcmp",
-  "2024txcmp1": "2024txcmp",
-  "2024txcmp2": "2024txcmp",
-  "2024oncmp": "2024oncmp",
-  "2024oncmp1": "2024oncmp",
-  "2024oncmp2": "2024oncmp",
-  "2024cmptx": "2024cmptx",
-  "2024arc": "2024cmptx",
-  "2024cur": "2024cmptx",
-  "2024dal": "2024cmptx",
-  "2024gal": "2024cmptx",
-  "2024hop": "2024cmptx",
-  "2024joh": "2024cmptx",
-  "2024mil": "2024cmptx",
-  "2024new": "2024cmptx",
-  "2025arc": "2025cmptx",
-  "2025cur": "2025cmptx",
-  "2025dal": "2025cmptx",
-  "2025gal": "2025cmptx",
-  "2025hop": "2025cmptx",
-  "2025joh": "2025cmptx",
-  "2025mil": "2025cmptx",
-  "2025new": "2025cmptx",
+// FTC Region mappings
+export const FTC_REGIONS: { [key: string]: string } = {
+  USAK: "Alaska",
+  USAL: "Alabama",
+  USAR: "Arkansas",
+  USAZ: "Arizona",
+  USCALA: "California - Los Angeles",
+  USCANO: "California - NorCal",
+  USCASD: "California - San Diego",
+  USCO: "Colorado",
+  USCT: "Connecticut",
+  USDE: "Delaware",
+  USFL: "Florida",
+  USGA: "Georgia",
+  USHI: "Hawaii",
+  USIA: "Iowa",
+  USID: "Idaho",
+  USIL: "Illinois",
+  USIN: "Indiana",
+  USKS: "Kansas",
+  USKY: "Kentucky",
+  USLA: "Louisiana",
+  USMA: "Massachusetts",
+  USMD: "Maryland",
+  USMI: "Michigan",
+  USMN: "Minnesota",
+  USMO: "Missouri",
+  USMS: "Mississippi",
+  USMT: "Montana",
+  USNC: "North Carolina",
+  USND: "North Dakota",
+  USNE: "Nebraska",
+  USNH: "New Hampshire",
+  USNJ: "New Jersey",
+  USNM: "New Mexico",
+  USNV: "Nevada",
+  USNYEX: "New York - Excelsior",
+  USNYLI: "New York - Long Island",
+  USNYNYC: "New York - NYC",
+  USOH: "Ohio",
+  USOK: "Oklahoma",
+  USOR: "Oregon",
+  USPA: "Pennsylvania",
+  USRI: "Rhode Island",
+  USSC: "South Carolina",
+  USTN: "Tennessee",
+  USTXCE: "Texas - Central",
+  USTXHO: "Texas - Houston",
+  USTXNO: "Texas - North",
+  USTXSO: "Texas - South",
+  USTXWP: "Texas - West/Panhandle",
+  USUT: "Utah",
+  USVA: "Virginia",
+  USVT: "Vermont",
+  USWA: "Washington",
+  USWI: "Wisconsin",
+  USWV: "West Virginia",
+  USWY: "Wyoming",
+  CAAB: "Alberta",
+  CABC: "British Columbia",
+  CAMB: "Manitoba",
+  CAON: "Ontario",
+  CAQC: "Quebec",
 };
 
-export const mainEventToDivisions = {
-  "2023micmp": [
-    { name: "Overall", key: "2023micmp" },
-    { name: "DTE Energy Foundation", key: "2023micmp1" },
-    { name: "Ford", key: "2023micmp2" },
-    { name: "Aptiv", key: "2023micmp3" },
-    { name: "Consumers Energy", key: "2023micmp4" },
-  ],
-  "2023necmp": [
-    { name: "Overall", key: "2023necmp" },
-    { name: "Meir", key: "2023necmp1" },
-    { name: "Wilson", key: "2023necmp2" },
-  ],
-  "2023txcmp": [
-    { name: "Overall", key: "2023txcmp" },
-    { name: "Apollo", key: "2023txcmp1" },
-    { name: "Mercury", key: "2023txcmp2" },
-  ],
-  "2023oncmp": [
-    { name: "Overall", key: "2023oncmp" },
-    { name: "Technology", key: "2023oncmp1" },
-    { name: "Science", key: "2023oncmp2" },
-  ],
-  "2023cmptx": [
-    { name: "Overall", key: "2023cmptx" },
-    { name: "Archimedes", key: "2023arc" },
-    { name: "Curie", key: "2023cur" },
-    { name: "Daly", key: "2023dal" },
-    { name: "Galileo", key: "2023gal" },
-    { name: "Hopper", key: "2023hop" },
-    { name: "Johnson", key: "2023joh" },
-    { name: "Milstein", key: "2023mil" },
-    { name: "Newton", key: "2023new" },
-  ],
-  "2024micmp": [
-    { name: "Overall", key: "2024micmp" },
-    { name: "DTE Energy Foundation", key: "2024micmp1" },
-    { name: "Hemlock Semiconductor", key: "2024micmp2" },
-    { name: "Consumers Energy", key: "2024micmp3" },
-    { name: "Aptiv", key: "2024micmp4" },
-  ],
-  "2024necmp": [
-    { name: "Overall", key: "2024necmp" },
-    { name: "Ganson", key: "2024necmp1" },
-    { name: "Richardson", key: "2024necmp2" },
-  ],
-  "2024txcmp": [
-    { name: "Overall", key: "2024txcmp" },
-    { name: "Mercury", key: "2024txcmp1" },
-    { name: "Apollo", key: "2024txcmp2" },
-  ],
-  "2024oncmp": [
-    { name: "Overall", key: "2024oncmp" },
-    { name: "Science", key: "2024oncmp1" },
-    { name: "Technology", key: "2024oncmp2" },
-  ],
-  "2024cmptx": [
-    { name: "Overall", key: "2024cmptx" },
-    { name: "Archimedes", key: "2024arc" },
-    { name: "Curie", key: "2024cur" },
-    { name: "Daly", key: "2024dal" },
-    { name: "Galileo", key: "2024gal" },
-    { name: "Hopper", key: "2024hop" },
-    { name: "Johnson", key: "2024joh" },
-    { name: "Milstein", key: "2024mil" },
-    { name: "Newton", key: "2024new" },
-  ],
-  "2025cmptx": [
-    { name: "Overall", key: "2025cmptx" },
-    { name: "Archimedes", key: "2025arc" },
-    { name: "Curie", key: "2025cur" },
-    { name: "Daly", key: "2025dal" },
-    { name: "Galileo", key: "2025gal" },
-    { name: "Hopper", key: "2025hop" },
-    { name: "Johnson", key: "2025joh" },
-    { name: "Milstein", key: "2025mil" },
-    { name: "Newton", key: "2025new" },
-  ],
-};
+// Empty event name map for FTC (can be customized)
+export const eventNameMap: { [key: string]: string } = {};
+
+// Empty division mapping for FTC (FTC doesn't have the same division structure as FRC)
+export const divisionToMainEvent: { [key: string]: string } = {};
+export const mainEventToDivisions: { [key: string]: { name: string; key: string }[] } = {};

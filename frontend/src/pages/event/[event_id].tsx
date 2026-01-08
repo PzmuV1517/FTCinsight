@@ -37,7 +37,7 @@ const InnerPage = () => {
 
   useEffect(() => {
     if (event_id) {
-      document.title = `${event_id} - Statbotics`;
+      document.title = `${event_id} - FTC Insight`;
     }
   }, [event_id]);
 

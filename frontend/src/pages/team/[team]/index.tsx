@@ -14,8 +14,15 @@ const InnerPage = () => {
   const paramYear = CURR_YEAR;
 
   useEffect(() => {
-    document.title = `Team ${team} - Statbotics`;
+    if (team) {
+      document.title = `Team ${team} - FTC Insight`;
+    }
   }, [team]);
+
+  // Wait for router to be ready
+  if (!router.isReady || !team) {
+    return <div>Loading...</div>;
+  }
 
   return <PageContent team={Number(team)} paramYear={paramYear} />;
 };

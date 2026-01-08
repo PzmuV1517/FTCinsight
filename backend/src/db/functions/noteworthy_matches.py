@@ -1,13 +1,24 @@
 from typing import Dict, List, Optional
 
-from sqlalchemy import asc, desc, func
+from sqlalchemy import asc, case, desc, func
 from sqlalchemy.orm import Session as SessionType
-from sqlalchemy_cockroachdb import run_transaction  # type: ignore
+from src.db.main import run_transaction
 
 from src.db.main import Session
 from src.db.models.event import EventORM
 from src.db.models.match import Match, MatchORM
 from src.types.enums import MatchStatus
+
+
+# SQLite-compatible greatest/least functions using CASE WHEN
+def sqlite_greatest(col1, col2):
+    """SQLite doesn't have GREATEST, use CASE WHEN instead"""
+    return case((col1 > col2, col1), else_=col2)
+
+
+def sqlite_least(col1, col2):
+    """SQLite doesn't have LEAST, use CASE WHEN instead"""
+    return case((col1 < col2, col1), else_=col2)
 
 
 def get_noteworthy_matches(
@@ -53,7 +64,7 @@ def get_noteworthy_matches(
 
         high_score_matches = (
             matches.add_columns(
-                func.greatest(red_score_col, blue_score_col).label("max_score")
+                sqlite_greatest(red_score_col, blue_score_col).label("max_score")
             )
             .order_by(desc("max_score"), asc(MatchORM.time))  # type: ignore
             .limit(30)
@@ -69,7 +80,7 @@ def get_noteworthy_matches(
 
         high_losing_scores = (
             matches.add_columns(
-                func.least(MatchORM.red_score, MatchORM.blue_score).label(
+                sqlite_least(MatchORM.red_score, MatchORM.blue_score).label(
                     "losing_score"
                 ),
             )
@@ -82,7 +93,7 @@ def get_noteworthy_matches(
         if year >= 2016:
             high_auto_score_matches = (
                 matches.add_columns(
-                    func.greatest(MatchORM.red_auto, MatchORM.blue_auto).label(
+                    sqlite_greatest(MatchORM.red_auto, MatchORM.blue_auto).label(
                         "max_auto_score"
                     )
                 )
@@ -93,7 +104,7 @@ def get_noteworthy_matches(
 
             high_teleop_score_matches = (
                 matches.add_columns(
-                    func.greatest(MatchORM.red_teleop, MatchORM.blue_teleop).label(
+                    sqlite_greatest(MatchORM.red_teleop, MatchORM.blue_teleop).label(
                         "max_teleop_score"
                     )
                 )
@@ -104,7 +115,7 @@ def get_noteworthy_matches(
 
             high_endgame_score_matches = (
                 matches.add_columns(
-                    func.greatest(MatchORM.red_endgame, MatchORM.blue_endgame).label(
+                    sqlite_greatest(MatchORM.red_endgame, MatchORM.blue_endgame).label(
                         "max_endgame_score"
                     )
                 )

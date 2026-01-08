@@ -9,7 +9,7 @@ from src.db.main import Base
 from src.db.models.main import Model, ModelORM, generate_attr_class
 from src.db.models.types import MB, MF, MI, MOB, MOF, MOI, MOS, MS, values_callable
 from src.models.epa.math import get_skew_normal_95_conf_interval
-from src.types.enums import EventStatus, EventType
+from src.types.enums import EventStatus, FTCEventType
 
 
 class TeamEventORM(Base, ModelORM):
@@ -36,8 +36,8 @@ class TeamEventORM(Base, ModelORM):
     country: MOS = mapped_column(String(30), nullable=True)
     state: MOS = mapped_column(String(10), nullable=True)
     district: MOS = mapped_column(String(10), nullable=True)
-    type: Mapped[EventType] = mapped_column(
-        Enum(EventType, values_callable=values_callable)
+    type: Mapped[FTCEventType] = mapped_column(
+        Enum(FTCEventType, values_callable=values_callable)
     )
     week: MI = mapped_column(Integer)
 

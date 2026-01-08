@@ -34,7 +34,7 @@ const Navbar = () => {
     getAllEvents().then((data) => setEvents(data));
   }, []);
 
-  const teamOptions = teams
+  const teamOptions = (teams || [])
     ?.filter((team) => team.active)
     ?.sort((a, b) => parseInt(a.team) - parseInt(b.team))
     ?.map((team: ShortTeam) => ({
@@ -42,14 +42,14 @@ const Navbar = () => {
       label: `${team.team} | ${team.name}`,
     }));
 
-  const eventOptions = events
+  const eventOptions = (events || [])
     ?.sort((a, b) => parseInt(b.key.slice(0, 4)) - parseInt(a.key.slice(0, 4)))
     ?.map((event: any) => ({
       value: `/event/${event.key}`,
       label: `${event.key.slice(0, 4)} ${event.name}`,
     }));
 
-  const allOptions = [...teamOptions, ...eventOptions];
+  const allOptions = [...(teamOptions || []), ...(eventOptions || [])];
 
   const TeamSelect = () => {
     return (
@@ -88,7 +88,7 @@ const Navbar = () => {
             loader={loaderProp}
             unoptimized
           />
-          Statbotics
+          FTC Insight
         </Link>
         <div className="hidden md:flex items-center text-base text-gray-300 hover:text-gray-100 font-thin mr-4">
           <Link href="/teams">Teams</Link>
@@ -146,7 +146,7 @@ const Navbar = () => {
           >
             <li>
               <Link
-                href="https://github.com/avgupta456/statbotics"
+                href="https://github.com/your-repo/ftcinsight"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -155,20 +155,11 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="https://statbotics.canny.io/feature-requests"
+                href="https://github.com/your-repo/ftcinsight/issues"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="w-36 py-1 text-sm text-center border-b-[1px]">Give Feedback</div>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://www.buymeacoffee.com/statbotics"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div className="w-36 py-1 text-sm text-center">Buy Me a Coffee</div>
+                <div className="w-36 py-1 text-sm text-center">Give Feedback</div>
               </Link>
             </li>
           </ul>

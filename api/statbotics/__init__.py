@@ -1,1 +1,3 @@
-from .main import *
+from .main import FTCInsight
+
+__all__ = ['FTCInsight']

@@ -1,4 +1,4 @@
-import { RP_NAMES } from "../../constants";
+import { RP_NAMES, getRPName } from "../../constants";
 import { APITeamEvent, APITeamMatch, APITeamYear } from "../../types/api";
 
 export type LineData = {
@@ -43,14 +43,14 @@ export const getYAxisOptions = (year: number) => [
             teamYear?.epa?.breakdown?.rp_1 ?? 0,
           matchAccessor: (teamMatch: APITeamMatch) => teamMatch?.epa?.breakdown?.rp_1 ?? 0,
           value: "rp_1_epa",
-          label: `${RP_NAMES[year][0]} EPA`,
+          label: `${getRPName(year, 0)} EPA`,
         },
         {
           yearAccessor: (teamYear: APITeamYear | APITeamEvent) =>
             teamYear?.epa?.breakdown?.rp_2 ?? 0,
           matchAccessor: (teamMatch: APITeamMatch) => teamMatch?.epa?.breakdown?.rp_2 ?? 0,
           value: "rp_2_epa",
-          label: `${RP_NAMES[year][1]} EPA`,
+          label: `${getRPName(year, 1)} EPA`,
         },
       ]
     : []),
@@ -61,7 +61,7 @@ export const getYAxisOptions = (year: number) => [
             teamYear?.epa?.breakdown?.rp_3 ?? 0,
           matchAccessor: (teamMatch: APITeamMatch) => teamMatch?.epa?.breakdown?.rp_3 ?? 0,
           value: "rp_3_epa",
-          label: `${RP_NAMES[year][2]} EPA`,
+          label: `${getRPName(year, 2)} EPA`,
         },
       ]
     : []),

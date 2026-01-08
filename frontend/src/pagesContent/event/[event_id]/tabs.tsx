@@ -62,8 +62,8 @@ const Tabs = ({ eventId, year, data }: { eventId: string; year: number; data: Ev
             year >= 2016 && "Teleop",
             year >= 2016 && "Endgame",
             year >= 2016 && "Auto + Endgame",
-            year >= 2016 && `${RP_NAMES[year][0]}`,
-            year >= 2016 && `${RP_NAMES[year][1]}`,
+            year >= 2016 && RP_NAMES?.[year]?.[0] && `${RP_NAMES[year][0]}`,
+            year >= 2016 && RP_NAMES?.[year]?.[1] && `${RP_NAMES[year][1]}`,
             "Rank",
             "RPs / Match",
           ].filter(Boolean) as string[]

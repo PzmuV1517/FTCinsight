@@ -22,9 +22,14 @@ const InnerPage = () => {
 
   useEffect(() => {
     if (team) {
-      document.title = `Team ${team} - Statbotics`;
+      document.title = `Team ${team} - FTC Insight`;
     }
   }, [team]);
+
+  // Wait for router to be ready
+  if (!router.isReady || !team) {
+    return <div>Loading...</div>;
+  }
 
   return <PageContent team={Number(team)} paramYear={year} />;
 };

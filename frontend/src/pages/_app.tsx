@@ -15,18 +15,18 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
   return (
     <div>
       <Head>
-        <title>Statbotics</title>
-        <meta name="description" content="Modernizing FRC Data Analytics" />
+        <title>FTC Insight</title>
+        <meta name="description" content="Modernizing FTC Data Analytics" />
 
         {/* Open Graph Tags */}
-        <meta property="og:title" content="Statbotics" />
-        <meta property="og:description" content="Modernizing FRC Data Analytics" />
+        <meta property="og:title" content="FTC Insight" />
+        <meta property="og:description" content="Modernizing FTC Data Analytics" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.statbotics.io" />
-        <meta property="og:image" content="https://www.statbotics.io/og_spline.png" />
+        <meta property="og:url" content="https://www.ftcinsight.org" />
+        <meta property="og:image" content="https://www.ftcinsight.org/og_spline.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:logo" content="https://www.statbotics.io/circ_favicon.ico" />
+        <meta property="og:logo" content="https://www.ftcinsight.org/circ_favicon.ico" />
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
@@ -55,29 +55,20 @@ export default function RootLayout({ Component, pageProps }: AppProps) {
           <div className="h-4 sm:h-5 lg:h-6 flex justify-center items-center gap-1 text-xs sm:text-sm lg:text-base">
             Powered by{" "}
             <Link
-              href="https://www.thebluealliance.com/"
+              href="https://ftc-events.firstinspires.org/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
-              The Blue Alliance
+              FTC Events API
             </Link>
             <Link
-              href="https://www.thebluealliance.com/"
+              href="https://www.firstinspires.org/robotics/ftc"
               target="_blank"
               rel="noopener noreferrer"
               className="relative h-4 sm:h-5 lg:h-6 w-4 sm:h-5 lg:w-6 mx-1"
             >
-              <Image src="/tba.png" alt="TBA" unoptimized fill className="object-contain" />
-            </Link>
-            | Sponsored by{" "}
-            <Link
-              href="https://wcproducts.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative ml-1 h-4 w-10 sm:h-5 sm:w-12 lg:h-6 lg:w-16"
-            >
-              <Image src="/wcp.png" alt="WCP" unoptimized fill className="object-contain" />
+              <Image src="/first_logo.png" alt="FIRST" unoptimized fill className="object-contain" />
             </Link>
           </div>
         </footer>

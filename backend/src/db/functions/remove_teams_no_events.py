@@ -1,7 +1,7 @@
 from typing import List
 
 from sqlalchemy.orm import Session as SessionType
-from sqlalchemy_cockroachdb import run_transaction  # type: ignore
+from src.db.main import run_transaction
 
 from src.constants import CURR_YEAR
 from src.db.main import Session

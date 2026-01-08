@@ -2,3 +2,7 @@
 poetry.lock
 __pycache__
 cache
+/node1
+seed_db.py
+firebase_key.json
+firebase-service-account.json

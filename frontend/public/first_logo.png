@@ -1,0 +1,1820 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="shortcut icon" href="https://www.firstinspires.org/hubfs/first-favicon.png">
+    <meta name="description" content="">
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="/hs/hsstatic/jquery-libs/static-1.1/jquery/jquery-1.7.1.js"></script>
+<script>hsjQuery = window['jQuery'];</script>
+    <meta property="og:description" content="">
+    <meta property="og:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="">
+
+    
+
+    
+
+    <style>
+a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
+</style>
+
+<link rel="stylesheet" href="https://www.firstinspires.org/hubfs/hub_generated/template_assets/1/191558704176/1767817872116/template_styles.min.css">
+<link rel="stylesheet" href="https://www.firstinspires.org/hubfs/hub_generated/module_assets/1/191558704136/1765464113853/module_u4m-header.css">
+<link rel="stylesheet" href="https://www.firstinspires.org/hubfs/hub_generated/module_assets/1/191560284035/1767708719548/module_u4m-footer.min.css">
+
+    
+
+
+    
+<!--  Added by GoogleAnalytics4 integration -->
+<script>
+var _hsp = window._hsp = window._hsp || [];
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+var useGoogleConsentModeV2 = true;
+var waitForUpdateMillis = 1000;
+
+
+if (!window._hsGoogleConsentRunOnce) {
+  window._hsGoogleConsentRunOnce = true;
+
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'wait_for_update': waitForUpdateMillis
+  });
+
+  if (useGoogleConsentModeV2) {
+    _hsp.push(['useGoogleConsentModeV2'])
+  } else {
+    _hsp.push(['addPrivacyConsentListener', function(consent){
+      var hasAnalyticsConsent = consent && (consent.allowed || (consent.categories && consent.categories.analytics));
+      var hasAdsConsent = consent && (consent.allowed || (consent.categories && consent.categories.advertisement));
+
+      gtag('consent', 'update', {
+        'ad_storage': hasAdsConsent ? 'granted' : 'denied',
+        'analytics_storage': hasAnalyticsConsent ? 'granted' : 'denied',
+        'ad_user_data': hasAdsConsent ? 'granted' : 'denied',
+        'ad_personalization': hasAdsConsent ? 'granted' : 'denied'
+      });
+    }]);
+  }
+}
+
+gtag('js', new Date());
+gtag('set', 'developer_id.dZTQ1Zm', true);
+gtag('config', 'G-YCHVEBFMCS');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YCHVEBFMCS"></script>
+
+<!-- /Added by GoogleAnalytics4 integration -->
+
+<!--  Added by GoogleTagManager integration -->
+<script>
+var _hsp = window._hsp = window._hsp || [];
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+var useGoogleConsentModeV2 = true;
+var waitForUpdateMillis = 1000;
+
+
+
+var hsLoadGtm = function loadGtm() {
+    if(window._hsGtmLoadOnce) {
+      return;
+    }
+
+    if (useGoogleConsentModeV2) {
+
+      gtag('set','developer_id.dZTQ1Zm',true);
+
+      gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': waitForUpdateMillis
+      });
+
+      _hsp.push(['useGoogleConsentModeV2'])
+    }
+
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WC3H9B');
+
+    window._hsGtmLoadOnce = true;
+};
+
+_hsp.push(['addPrivacyConsentListener', function(consent){
+  if(consent.allowed || (consent.categories && consent.categories.analytics)){
+    hsLoadGtm();
+  }
+}]);
+
+</script>
+
+<!-- /Added by GoogleTagManager integration -->
+
+    <link rel="canonical" href="https://www.firstinspires.org/404">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "FIRST (For Inspiration and Recognition of Science and Technology)",
+  "url": "https://www.firstinspires.org",
+  "logo": "https://info.firstinspires.org/hubfs/web/design/first-web/Branding/Primaries/Logo%20Primary.svg",
+  "sameAs": [
+    "https://instagram.com/first_official_",
+    "https://www.tiktok.com/@first_inspires",
+    "https://www.facebook.com/FIRSTOfficial",
+    "https://www.linkedin.com/company/first_2",
+    "https://www.youtube.com/user/FIRSTWorldTube"
+  ],
+  "description": "FIRST® is a robotics community that prepares young people for the future through a suite of welcoming, team-based youth robotics programs.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "200 Bedford Street",
+    "addressLocality": "Manchester",
+    "addressRegion": "NH",
+    "postalCode": "03101",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "42.9894752502441",
+    "longitude": "-71.4678039550781"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "customerservice@firstinspires.org"
+  }
+}
+</script>
+<meta property="og:url" content="https://www.firstinspires.org/404">
+<meta name="twitter:card" content="summary">
+<meta http-equiv="content-language" content="en">
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=block" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=block" rel="stylesheet">
+
+    
+
+
+<meta name="generator" content="HubSpot"></head>
+<body class="  hs-content-id-0 hs-site-page page  ">
+<!--  Added by GoogleTagManager integration -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WC3H9B" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- /Added by GoogleTagManager integration -->
+
+    <script>
+      (function() {
+        if (document.readyState === 'loading') {
+          var observer = new MutationObserver(function() {
+            var topNav = document.querySelector('.top-navigation');
+            if (topNav && !document.body.classList.contains('has-top-nav')) {
+              document.body.classList.add('has-top-nav');
+              observer.disconnect();
+            }
+          });
+          observer.observe(document.body, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', function() {
+            var topNav = document.querySelector('.top-navigation');
+            if (topNav) {
+              document.body.classList.add('has-top-nav');
+            }
+            observer.disconnect();
+          });
+        } else {
+          var topNav = document.querySelector('.top-navigation');
+          if (topNav) {
+            document.body.classList.add('has-top-nav');
+          }
+        }
+      })();
+    </script>
+    
+        
+        <div id="hs_cos_wrapper_u4m-header" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><header class="u4m-header">
+  
+  
+  
+  <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+  
+  
+  
+  
+  
+	<div class="top-navigation">
+    <div class="inner">
+      
+      <ul>
+        
+        <li role="menu-item">
+          
+          
+          <a href="https://www.firstinspires.org/find-local-support?hsLang=en">
+          Find Local Support
+          </a>        
+        </li>
+        
+        <li role="menu-item">
+          
+          
+          <a href="https://my.firstinspires.org/AccountManager/Account/Register" target="_blank" rel="noopener">
+          Create <i>FIRST</i> Account
+          </a>        
+        </li>
+        
+        <li role="menu-item">
+          
+          
+          <a href="https://my.firstinspires.org/Dashboard/" target="_blank" rel="noopener">
+          My Dashboard
+          </a>        
+        </li>
+        
+        <li role="menu-item">
+          
+          
+          <a href="https://help.firstinspires.org/" target="_blank" rel="noopener">
+          Help Center
+          </a>        
+        </li>
+        
+      </ul>
+      
+      <!-- search toggle -->
+      <div class="search-toggle search-toggle-button" tabindex="0">
+        <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.7556 16L9.15556 10.4C8.71111 10.7556 8.2 11.037 7.62222 11.2444C7.04444 11.4519 6.42963 11.5556 5.77778 11.5556C4.16296 11.5556 2.7963 10.9963 1.67778 9.87778C0.559259 8.75926 0 7.39259 0 5.77778C0 4.16296 0.559259 2.7963 1.67778 1.67778C2.7963 0.559259 4.16296 0 5.77778 0C7.39259 0 8.75926 0.559259 9.87778 1.67778C10.9963 2.7963 11.5556 4.16296 11.5556 5.77778C11.5556 6.42963 11.4519 7.04444 11.2444 7.62222C11.037 8.2 10.7556 8.71111 10.4 9.15556L16 14.7556L14.7556 16ZM5.77778 9.77778C6.88889 9.77778 7.83333 9.38889 8.61111 8.61111C9.38889 7.83333 9.77778 6.88889 9.77778 5.77778C9.77778 4.66667 9.38889 3.72222 8.61111 2.94444C7.83333 2.16667 6.88889 1.77778 5.77778 1.77778C4.66667 1.77778 3.72222 2.16667 2.94444 2.94444C2.16667 3.72222 1.77778 4.66667 1.77778 5.77778C1.77778 6.88889 2.16667 7.83333 2.94444 8.61111C3.72222 9.38889 4.66667 9.77778 5.77778 9.77778Z" fill="white" /></svg>
+      </div>          
+    </div>
+  </div>
+    
+  
+  
+  <div class="inner primary-nav">
+    <div class="logo">
+      
+      
+      <a href="https://www.firstinspires.org/?hsLang=en">
+        
+        
+        
+        
+        
+        
+        <img src="https://www.firstinspires.org/hubfs/web/design/first-web/Branding/Primaries/Logo%20Primary.svg" alt="Logo Primary" loading="" width="154" height="40" style="max-width: 100%; height: auto;">
+        
+      </a>
+    </div>
+    
+    <div class="navigation-wrap">
+      
+      <div class="menu">
+        
+      <ul class="main-menu">
+      
+        <li class="parent-item has-children ">
+          
+          
+         
+            Programs
+          
+          
+          <svg class="caret" width="8" height="5" viewbox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5L0 0.945946L0.933333 0L4 3.10811L7.06667 0L8 0.945946L4 5Z" fill="#231F20" /></svg>
+          
+          
+          
+            
+            <div class="mega-menu-bg-wrapper">
+              <div class="inner">
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(237, 28, 36,1.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);"><em>FIRST</em> LEGO League</p>
+                  
+                  <span class="group-subtitle" style="color: rgba(#null,0.0);">Grades K-8 | Ages 5-16</span>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/programs/fll/?hsLang=en" aria-label="View <em>FIRST</em> LEGO League"><em>FIRST</em> LEGO League</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/fll/get-started?hsLang=en">
+                      Getting Started
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/fll/game-and-season?hsLang=en">
+                      Game &amp; Season
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#first_lego_league">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://community.firstinspires.org/topic/fll?hsLang=en">
+                      Blog
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(245, 126, 37,1.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);"><em>FIRST</em> Tech Challenge</p>
+                  
+                  <span class="group-subtitle" style="color: rgba(#null,0.0);">Grades 7-12 | Ages 12-18</span>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/programs/ftc/?hsLang=en" aria-label="View <em>FIRST</em> Tech Challenge"><em>FIRST</em> Tech Challenge</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/ftc/get-started?hsLang=en">
+                      Getting Started
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/ftc/game-and-season?hsLang=en">
+                      Game &amp; Season
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#first_tech_challenge">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://community.firstinspires.org/topic/ftc?hsLang=en">
+                      Blog
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(0, 156, 215,1.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);"><em>FIRST</em> Robotics Competition</p>
+                  
+                  <span class="group-subtitle" style="color: rgba(#null,0.0);">Grades 9-12 | Ages 14-18</span>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/programs/frc/?hsLang=en" aria-label="View <em>FIRST</em> Robotics Competition"><em>FIRST</em> Robotics Competition</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/frc/get-started?hsLang=en">
+                      Getting Started
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/frc/game-and-season?hsLang=en">
+                      Game &amp; Season
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#first_robotics_competition">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://community.firstinspires.org/topic/frc?hsLang=en">
+                      Blog
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper " style="background-color: rgba(0, 102, 179,1.0);">
+                  <p class="group-title" style="color: rgba(255, 255, 255,1.0);">Across All Programs</p>
+                  
+                 		
+                    
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/choose-a-program?hsLang=en">
+                      How to Choose a Program
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/cost-and-registration?hsLang=en">
+                      Cost &amp; Registration
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/events?hsLang=en">
+                      Events
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/team-grant-opportunities?hsLang=en">
+                      Team Grant Opportunities
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/youth-protection-program?hsLang=en">
+                      Youth Protection Program
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/youth-registration?hsLang=en">
+                      Youth Registration
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/careers-and-scholarships?hsLang=en">
+                      Classroom to Career &amp; Scholarships
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/first-championship?hsLang=en">
+                      <i>FIRST</i> Championship
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              </div>  
+            </div>  
+            
+              
+          
+          
+        </li>
+      
+        <li class="parent-item has-children ">
+          
+          
+         
+            Community
+          
+          
+          <svg class="caret" width="8" height="5" viewbox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5L0 0.945946L0.933333 0L4 3.10811L7.06667 0L8 0.945946L4 5Z" fill="#231F20" /></svg>
+          
+          
+          
+            
+            <div class="mega-menu-bg-wrapper">
+              <div class="inner">
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(#null,0.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);">Donors &amp; Sponsors</p>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/community/donors-and-sponsors?hsLang=en" aria-label="View Donors &amp; Sponsors">Donors &amp; Sponsors</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/community/donors-and-sponsors/workplace-giving?hsLang=en">
+                      Workplace Giving
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/community/donors-and-sponsors/become-a-sponsor?hsLang=en">
+                      Become a Sponsor
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/community/donors-and-sponsors/ways-to-give?hsLang=en">
+                      More Ways to Give
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#donors___sponsors">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(#null,0.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);">Volunteers</p>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/community/volunteers?hsLang=en" aria-label="View Volunteers">Volunteers</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/community/volunteers/roles?hsLang=en">
+                      Volunteer Roles
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#volunteers">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(#null,0.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);">Parents</p>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/community/parents?hsLang=en" aria-label="View Parents">Parents</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/youth-registration?hsLang=en">
+                      Youth Registration
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/programs/youth-protection-program?hsLang=en">
+                      Youth Protection Program
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#parents">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(#null,0.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);">Educators &amp; Org Leaders</p>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/community/educators-and-org-leaders?hsLang=en" aria-label="View Educators &amp; Org Leaders">Educators &amp; Org Leaders</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/community/educators-and-org-leaders/professional-development?hsLang=en">
+                      Professional Development
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#educators___org_leaders">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(#null,0.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);">Teams</p>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/community/teams?hsLang=en" aria-label="View Teams">Teams</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/community/teams/coaches-and-mentors?hsLang=en">
+                      Coaches &amp; Mentors
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#team">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              <div class="mega-menu-bucket">
+                <div class="bucket-upper  linked" style="background-color: rgba(#null,0.0);">
+                  <p class="group-title" style="color: rgba(#null,0.0);">Alumni</p>
+                  
+                 		
+                    
+                  
+                   <a class="group-title-link" style="opacity:0;" href="https://www.firstinspires.org/community/alumni?hsLang=en" aria-label="View Alumni">Alumni</a>
+                  
+                </div>
+                
+                <span class="bucket-list-wrap">
+                  
+                  <ul class="bucket-submenu">
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="https://www.firstinspires.org/community/alumni/groups?hsLang=en">
+                      Alumni Groups
+                    </a>
+                    </li>
+                    
+                    <li class="bucket-item">
+                    
+                    
+                    <a href="/resources/library#alumni">
+                      Resources &amp; Documentation
+                    </a>
+                    </li>
+                    
+                  </ul>
+                  
+                </span>  
+                
+              </div>
+              
+              </div>  
+            </div>  
+            
+              
+          
+          
+        </li>
+      
+        <li class="parent-item has-children ">
+          
+          
+         
+            About
+          
+          
+          <svg class="caret" width="8" height="5" viewbox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5L0 0.945946L0.933333 0L4 3.10811L7.06667 0L8 0.945946L4 5Z" fill="#231F20" /></svg>
+          
+          
+          
+            
+            <ul class="single-column-child-items">
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about?hsLang=en">
+                About <i>FIRST</i>
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about/impact?hsLang=en">
+                Impact
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about/stem-for-everyone?hsLang=en">
+                <i>STEM for Everyone</i>
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about/leadership?hsLang=en">
+                Leadership
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about/our-supporters?hsLang=en">
+                Our Supporters
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about/history?hsLang=en">
+                History
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about/press-room?hsLang=en">
+                Press Room &amp; Photos
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/about/careers?hsLang=en">
+                Careers
+                </a>
+              </li>
+            
+            </ul>
+            
+          
+          
+          
+        </li>
+      
+        <li class="parent-item has-children ">
+          
+          
+         
+            Resources
+          
+          
+          <svg class="caret" width="8" height="5" viewbox="0 0 8 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5L0 0.945946L0.933333 0L4 3.10811L7.06667 0L8 0.945946L4 5Z" fill="#231F20" /></svg>
+          
+          
+          
+            
+            <ul class="single-column-child-items">
+            
+              
+              
+              <li>
+                <a href="https://www.firstinspires.org/resources/library?hsLang=en">
+                Resource Library
+                </a>
+              </li>
+            
+              
+              
+              <li>
+                <a href="https://community.firstinspires.org/?hsLang=en">
+                Community Blog
+                </a>
+              </li>
+            
+            </ul>
+            
+          
+          
+          
+        </li>
+      
+      </ul>         
+        
+      </div><!-- end .menu -->     
+      
+      
+    <div class="button-group">
+      
+      <span class="button-span button-stroked ">
+      
+        
+        
+        <a href="https://www.firstinspires.org/donate?hsLang=en">
+        Donate
+        </a>        
+        
+      </span>
+      
+      <span class="button-span button ">
+      
+        
+        
+        <a href="https://www.firstinspires.org/team-event-search?hsLang=en">
+        Find Teams &amp; Events
+        </a>        
+        
+      </span>
+      
+    </div>
+          
+    </div>
+
+    
+    <button class="hamburger-toggle x2"><span class="lines"></span></button>
+    
+    <div class="offscreen-menu">
+      <div class="content">
+        <div class="mobile-search">
+          
+<!--
+<div class="hs-search-field"> 
+  <div class="hs-search-field__bar"> 
+    <form action="/hs-search-results">
+      <input type="text" class="hs-search-field__input search-input" name="term" autocomplete="off" aria-label="Search" placeholder="Search">
+      
+      
+      <input type="hidden" name="type" value="SITE_PAGE">
+      <input type="hidden" name="type" value="LANDING_PAGE">
+      <input type="hidden" name="type" value="BLOG_POST">
+      <input type="hidden" name="type" value="LISTING_PAGE">
+      <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">     
+      
+      
+          
+      
+      
+      
+      
+      <button aria-label="Search" class="search-button"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>          
+      <span class="search-overlay-close search-toggle-button" aria-label="Close">✖</span>
+    </form>
+  </div>
+  <ul class="hs-search-field__suggestions"></ul>
+</div>
+-->
+
+
+<div class="hs-search-field">
+  <div class="hs-search-field__bar">
+    <div id="custom-search-container">
+      <input type="text" class="hs-search-field__input search-input" id="custom-search-input" autocomplete="off" aria-label="Search" placeholder="Search teams, events, and more...">
+      <button type="button" aria-label="Search" class="search-button" id="custom-search-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960" width="24px" fill="#5f6368">
+          <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+        </svg>
+      </button>
+      <span class="search-overlay-close search-toggle-button" aria-label="Close">✖</span>
+    </div>
+  </div>
+  <ul class="hs-search-field__suggestions" style="display: none"></ul>
+</div>
+
+<style>
+  /* Fix styling for custom search container (non-form layout) */
+  .hs-search-field .hs-search-field__bar #custom-search-container {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    input.search-input {
+    border: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    line-height: 1;
+    padding: 10px;
+    flex: 1;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    input.search-input::placeholder {
+    color: #9a989a;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-button {
+    border: 0;
+    background-color: #0066b3;
+    padding: 10px 15px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-button:hover {
+    background-color: #003974;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-button
+    svg
+    path {
+    fill: #fff;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-overlay-close {
+    margin-top: 7px;
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: -30px;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-overlay-close:hover {
+    opacity: 0.5;
+  }
+</style>
+
+<script>
+  // Use a function to avoid conflicts when this partial is included multiple times
+  (function () {
+    // Wait for DOM to be ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCustomSearch);
+    } else {
+      initCustomSearch();
+    }
+
+    function initCustomSearch() {
+      
+
+      // Find all instances of the search elements (in case of multiple includes)
+      const searchInputs = document.querySelectorAll("#custom-search-input");
+      const searchButtons = document.querySelectorAll("#custom-search-button");
+
+      
+      
+
+      function performSearch(inputElement) {
+        const searchTerm = inputElement.value.trim();
+        
+
+        if (searchTerm) {
+          // Redirect to team-event-search page with search term as query parameter
+          const searchUrl = `https://www.firstinspires.org/search?search=${encodeURIComponent(
+            searchTerm
+          )}`;
+          
+          window.location.href = searchUrl;
+        } else {
+          
+        }
+      }
+
+      // Setup event listeners for each pair
+      searchInputs.forEach((input, index) => {
+        const button = searchButtons[index];
+
+        if (input && button) {
+          
+
+          // Remove any existing listeners to avoid duplicates
+          const newButton = button.cloneNode(true);
+          button.parentNode.replaceChild(newButton, button);
+
+          const newInput = input.cloneNode(true);
+          input.parentNode.replaceChild(newInput, input);
+
+          // Handle search button click
+          newButton.addEventListener("click", function (e) {
+            
+            e.preventDefault();
+            performSearch(newInput);
+          });
+
+          // Handle Enter key press
+          newInput.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+              
+              e.preventDefault();
+              performSearch(newInput);
+            }
+          });
+        }
+      });
+    }
+  })();
+</script>
+        </div>   
+
+        <div class="mobile-cta">
+        
+    <div class="button-group">
+      
+      <span class="button-span button-stroked ">
+      
+        
+        
+        <a href="https://www.firstinspires.org/donate?hsLang=en">
+        Donate
+        </a>        
+        
+      </span>
+      
+      <span class="button-span button ">
+      
+        
+        
+        <a href="https://www.firstinspires.org/team-event-search?hsLang=en">
+        Find Teams &amp; Events
+        </a>        
+        
+      </span>
+      
+    </div>
+    
+        </div>  
+
+        <div class="mobile-menu">
+          <span id="hs_cos_wrapper_u4m-header_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu"><div id="hs_menu_wrapper_u4m-header_" class="hs-menu-wrapper active-branch no-flyouts hs-menu-flow-vertical" role="navigation" data-sitemap-name="default" data-menu-id="191810985234" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.firstinspires.org/find-local-support" role="menuitem">Find Local Support</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://my.firstinspires.org/AccountManager/Account/Register" role="menuitem">Create <i>FIRST</i> Account</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://my.firstinspires.org/Dashboard/" role="menuitem">My Dashboard</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://help.firstinspires.org/" role="menuitem">Help Center</a></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Programs</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem"><i>FIRST</i> LEGO League</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/fll/" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/fll/get-started" role="menuitem">Getting Started</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/fll/game-and-season" role="menuitem">Game &amp; Season</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#first_lego_league" role="menuitem">Resources &amp; Documentation</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="javascript:;" role="menuitem">Blog</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem"><i>FIRST</i> Tech Challenge</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/ftc/" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/ftc/get-started" role="menuitem">Getting Started</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/ftc/game-and-season" role="menuitem">Game &amp; Season</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#first_tech_challenge" role="menuitem">Resources &amp; Documentation</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="javascript:;" role="menuitem">Blog</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem"><i>FIRST</i> Robotics Competition</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/frc/" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/frc/get-started" role="menuitem">Getting Started</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/frc/game-and-season" role="menuitem">Game &amp; Season</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#first_robotics_competition" role="menuitem">Resources &amp; Documentation</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="javascript:;" role="menuitem">Blog</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem">Across All Programs</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/choose-a-program" role="menuitem">How to Choose a Program</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/cost-and-registration" role="menuitem">Cost &amp; Registration</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/events" role="menuitem">Events</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/team-grant-opportunities" role="menuitem">Team Grant Opportunities</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/youth-protection-program" role="menuitem">Youth Protection Program</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/youth-registration" role="menuitem">Youth Registration</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/careers-and-scholarships" role="menuitem">Classroom to Career &amp; Scholarship Opportunities </a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/first-championship" role="menuitem"><i>FIRST</i> Championship</a></li>
+     </ul></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Community</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem">Donors &amp; Sponsors</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/donors-and-sponsors" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/donors-and-sponsors/workplace-giving" role="menuitem">Workplace Giving</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/donors-and-sponsors/become-a-sponsor" role="menuitem">Become a Sponsor</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/donors-and-sponsors/ways-to-give" role="menuitem">More Ways to Give</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#donors___sponsors" role="menuitem">Resources &amp; Documentation</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem">Volunteers</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/volunteers" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/volunteers/roles" role="menuitem">Volunteer Roles</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#volunteers" role="menuitem">Resources &amp; Documentation</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem">Parents</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/parents" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/youth-registration" role="menuitem">Youth Registration</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/programs/youth-protection-program" role="menuitem">Youth Protection Program</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#parents" role="menuitem">Resources &amp; Documentation</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem">Educators &amp; Org Leaders</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/educators-and-org-leaders" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/educators-and-org-leaders/professional-development" role="menuitem">Professional Development</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#educators___org_leaders" role="menuitem">Resources &amp; Documentation</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem">Teams</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/teams" role="menuitem">Teams</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/teams/coaches-and-mentors" role="menuitem">Mentors &amp; Coaches</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#team" role="menuitem">Resources &amp; Documentation</a></li>
+     </ul></li>
+    <li class="hs-menu-item hs-menu-depth-2 hs-item-has-children" role="none"><a href="javascript:;" role="menuitem">Alumni</a>
+     <ul role="menu" class="hs-menu-children-wrapper">
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/alumni" role="menuitem">Overview</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/community/alumni/groups" role="menuitem">Alumni Groups</a></li>
+      <li class="hs-menu-item hs-menu-depth-3" role="none"><a href="https://www.firstinspires.org/resources/library#alumni" role="menuitem">Resources &amp; Documentation</a></li>
+     </ul></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">About</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about" role="menuitem">About <i>FIRST</i></a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/impact" role="menuitem">Impact</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/stem-for-everyone" role="menuitem"><i>STEM for Everyone</i></a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/leadership" role="menuitem">Leadership</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/our-supporters" role="menuitem">Our Supporters</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/history" role="menuitem">History</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/press-room" role="menuitem">Press Room &amp; Photos</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/careers" role="menuitem">Careers</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Resources</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/resources/library" role="menuitem">Resource Library</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://community.firstinspires.org" role="menuitem">Community Blog</a></li>
+   </ul></li>
+ </ul>
+</div></span>
+        </div>
+       
+    
+            
+      </div>
+    </div>
+    
+  </div><!-- end .inner -->
+  <div class="search-overlay">
+  
+<!--
+<div class="hs-search-field"> 
+  <div class="hs-search-field__bar"> 
+    <form action="/hs-search-results">
+      <input type="text" class="hs-search-field__input search-input" name="term" autocomplete="off" aria-label="Search" placeholder="Search">
+      
+      
+      <input type="hidden" name="type" value="SITE_PAGE">
+      <input type="hidden" name="type" value="LANDING_PAGE">
+      <input type="hidden" name="type" value="BLOG_POST">
+      <input type="hidden" name="type" value="LISTING_PAGE">
+      <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">     
+      
+      
+          
+      
+      
+      
+      
+      <button aria-label="Search" class="search-button"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg></button>          
+      <span class="search-overlay-close search-toggle-button" aria-label="Close">✖</span>
+    </form>
+  </div>
+  <ul class="hs-search-field__suggestions"></ul>
+</div>
+-->
+
+
+<div class="hs-search-field">
+  <div class="hs-search-field__bar">
+    <div id="custom-search-container">
+      <input type="text" class="hs-search-field__input search-input" id="custom-search-input" autocomplete="off" aria-label="Search" placeholder="Search teams, events, and more...">
+      <button type="button" aria-label="Search" class="search-button" id="custom-search-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960" width="24px" fill="#5f6368">
+          <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+        </svg>
+      </button>
+      <span class="search-overlay-close search-toggle-button" aria-label="Close">✖</span>
+    </div>
+  </div>
+  <ul class="hs-search-field__suggestions" style="display: none"></ul>
+</div>
+
+<style>
+  /* Fix styling for custom search container (non-form layout) */
+  .hs-search-field .hs-search-field__bar #custom-search-container {
+    display: flex;
+    margin-bottom: 0;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    input.search-input {
+    border: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    line-height: 1;
+    padding: 10px;
+    flex: 1;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    input.search-input::placeholder {
+    color: #9a989a;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-button {
+    border: 0;
+    background-color: #0066b3;
+    padding: 10px 15px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-button:hover {
+    background-color: #003974;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-button
+    svg
+    path {
+    fill: #fff;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-overlay-close {
+    margin-top: 7px;
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: -30px;
+  }
+
+  .hs-search-field
+    .hs-search-field__bar
+    #custom-search-container
+    .search-overlay-close:hover {
+    opacity: 0.5;
+  }
+</style>
+
+<script>
+  // Use a function to avoid conflicts when this partial is included multiple times
+  (function () {
+    // Wait for DOM to be ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCustomSearch);
+    } else {
+      initCustomSearch();
+    }
+
+    function initCustomSearch() {
+      
+
+      // Find all instances of the search elements (in case of multiple includes)
+      const searchInputs = document.querySelectorAll("#custom-search-input");
+      const searchButtons = document.querySelectorAll("#custom-search-button");
+
+      
+      
+
+      function performSearch(inputElement) {
+        const searchTerm = inputElement.value.trim();
+        
+
+        if (searchTerm) {
+          // Redirect to team-event-search page with search term as query parameter
+          const searchUrl = `https://www.firstinspires.org/search?search=${encodeURIComponent(
+            searchTerm
+          )}`;
+          
+          window.location.href = searchUrl;
+        } else {
+          
+        }
+      }
+
+      // Setup event listeners for each pair
+      searchInputs.forEach((input, index) => {
+        const button = searchButtons[index];
+
+        if (input && button) {
+          
+
+          // Remove any existing listeners to avoid duplicates
+          const newButton = button.cloneNode(true);
+          button.parentNode.replaceChild(newButton, button);
+
+          const newInput = input.cloneNode(true);
+          input.parentNode.replaceChild(newInput, input);
+
+          // Handle search button click
+          newButton.addEventListener("click", function (e) {
+            
+            e.preventDefault();
+            performSearch(newInput);
+          });
+
+          // Handle Enter key press
+          newInput.addEventListener("keydown", function (e) {
+            if (e.key === "Enter") {
+              
+              e.preventDefault();
+              performSearch(newInput);
+            }
+          });
+        }
+      });
+    }
+  })();
+</script>
+  </div> 
+</header></div>
+        
+    
+
+    
+  <main id="main-content" class="body-container-wrapper">
+  <section class="u4m-404-error">
+    <h1 class="heading">404 Error - We're sorry the page you're looking for isn't available.</h1>
+    <p>Please use the main menu to find what you're looking for.</p>
+  </section>
+  </main>
+
+    
+    
+        
+        <div id="hs_cos_wrapper_u4m-footer" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><footer class="u4m-footer">
+  <div class="inner">
+    
+    <div class="site-menu">
+      <div id="hs_menu_wrapper_u4m-footer_" class="hs-menu-wrapper active-branch no-flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="default" data-menu-id="191602195874" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Programs</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/fll/" role="menuitem"><em>FIRST</em> LEGO League</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/ftc/" role="menuitem"><em>FIRST</em> Tech Challenge</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/frc/" role="menuitem"><em>FIRST</em> Robotics Competition</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Across All Programs</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/choose-a-program" role="menuitem">How to Choose a Program</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/cost-and-registration" role="menuitem">Cost &amp; Registration</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/events" role="menuitem">Events</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/team-grant-opportunities" role="menuitem">Team Grant Opportunities</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/youth-protection-program" role="menuitem">Youth Protection Program</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/youth-registration" role="menuitem">Youth Registration</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/careers-and-scholarships" role="menuitem">Classroom to Career + Scholarships</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/programs/first-championship" role="menuitem"><em>FIRST</em> Championship</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Community</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/community/donors-and-sponsors" role="menuitem">Donors &amp; Sponsors</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/community/volunteers" role="menuitem">Volunteers</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/community/parents" role="menuitem">Parents</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/community/educators-and-org-leaders" role="menuitem">Educators &amp; Org Leaders</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/community/teams" role="menuitem">Teams</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/community/teams/coaches-and-mentors" role="menuitem">Mentors &amp; Coaches</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/community/alumni" role="menuitem">Alumni</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/store" role="menuitem" target="_blank" rel="noopener"><em>FIRST</em> Store</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://first.global/" role="menuitem" target="_blank" rel="noopener"><em>FIRST</em> Global</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">About</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about" role="menuitem">About <em>FIRST</em></a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/impact" role="menuitem">Impact</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/stem-for-everyone" role="menuitem"><i>STEM for Everyone</i></a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/leadership" role="menuitem">Leadership</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/our-supporters" role="menuitem">Our Supporters</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/press-room" role="menuitem">Press Room &amp; Photos</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/careers" role="menuitem">Careers</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/annual-report" role="menuitem">Annual Report &amp; Financials</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/about/brand" role="menuitem">Brand</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Resources</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/resources/library" role="menuitem">Resource Library</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://community.firstinspires.org" role="menuitem">Blog</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/find-local-support" role="menuitem">Find Local Support</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://help.firstinspires.org/" role="menuitem" target="_blank" rel="noopener">Help Center</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Quick Links</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/team-event-search" role="menuitem">Find Teams &amp; Events</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.firstinspires.org/donate" role="menuitem">Donate</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://my.firstinspires.org/AccountManager/Account/Register" role="menuitem" target="_blank" rel="noopener">Create Dashboard Account</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://my.firstinspires.org/Dashboard/" role="menuitem" target="_blank" rel="noopener"><em>FIRST</em> Dashboard Login</a></li>
+   </ul></li>
+ </ul>
+</div>      
+    </div>
+    
+    <!---->
+    
+    <div class="sub-footer">
+      <div class="connect">
+        <div class="logo">
+           
+          <a href="https://www.firstinspires.org/?hsLang=en">
+            <img loading="lazy" src="https://www.firstinspires.org/hubfs/Logo%20Reverse.svg" width="230" height="60" alt="Logo Reverse">
+          </a>
+        </div>
+        <div class="blurb">
+          <p></p><p><em>FIRST</em><sup>® </sup>is a robotics community that prepares young people for the future through a suite of welcoming, team-based youth robotics programs.</p>
+<p><br>Headquarters: 200 Bedford Street, Manchester, NH 03101</p>
+<p><br><span style="color: #ffffff;"><a href="https://help.firstinspires.org/s/contactsupport?language=en_US" rel="noopener" target="_blank" style="color: #ffffff;">Contact Us</a></span></p><p></p>          
+        </div>
+        <div class="social">
+          <ul>
+            <li><a href="https://instagram.com/first_official_" target="_blank" aria-label="Instagram" rel="noopener"><svg width="21" height="22" viewbox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5043 5.60977C7.52305 5.60977 5.11836 8.01445 5.11836 10.9957C5.11836 13.977 7.52305 16.3816 10.5043 16.3816C13.4855 16.3816 15.8902 13.977 15.8902 10.9957C15.8902 8.01445 13.4855 5.60977 10.5043 5.60977ZM10.5043 14.4973C8.57774 14.4973 7.00274 12.927 7.00274 10.9957C7.00274 9.06445 8.57305 7.49414 10.5043 7.49414C12.4355 7.49414 14.0059 9.06445 14.0059 10.9957C14.0059 12.927 12.4309 14.4973 10.5043 14.4973ZM17.3668 5.38945C17.3668 6.08789 16.8043 6.6457 16.1105 6.6457C15.4121 6.6457 14.8543 6.0832 14.8543 5.38945C14.8543 4.6957 15.4168 4.1332 16.1105 4.1332C16.8043 4.1332 17.3668 4.6957 17.3668 5.38945ZM20.934 6.66445C20.8543 4.98164 20.4699 3.49102 19.2371 2.26289C18.009 1.03477 16.5184 0.650391 14.8355 0.566016C13.1012 0.467578 7.90274 0.467578 6.16836 0.566016C4.49024 0.645703 2.99961 1.03008 1.7668 2.2582C0.533985 3.48633 0.154297 4.97695 0.0699219 6.65977C-0.0285156 8.39414 -0.0285156 13.5926 0.0699219 15.327C0.149609 17.0098 0.533985 18.5004 1.7668 19.7285C2.99961 20.9566 4.48555 21.341 6.16836 21.4254C7.90274 21.5238 13.1012 21.5238 14.8355 21.4254C16.5184 21.3457 18.009 20.9613 19.2371 19.7285C20.4652 18.5004 20.8496 17.0098 20.934 15.327C21.0324 13.5926 21.0324 8.39883 20.934 6.66445ZM18.6934 17.1879C18.3277 18.1066 17.6199 18.8145 16.6965 19.1848C15.3137 19.7332 12.0324 19.6066 10.5043 19.6066C8.97617 19.6066 5.69024 19.7285 4.31211 19.1848C3.39336 18.8191 2.68555 18.1113 2.31523 17.1879C1.7668 15.8051 1.89336 12.5238 1.89336 10.9957C1.89336 9.46758 1.77148 6.18164 2.31523 4.80352C2.68086 3.88477 3.38867 3.17695 4.31211 2.80664C5.69492 2.2582 8.97617 2.38477 10.5043 2.38477C12.0324 2.38477 15.3184 2.26289 16.6965 2.80664C17.6152 3.17227 18.323 3.88008 18.6934 4.80352C19.2418 6.18633 19.1152 9.46758 19.1152 10.9957C19.1152 12.5238 19.2418 15.8098 18.6934 17.1879Z" fill="white" /></svg></a></li>            
+            <li><a href="https://www.tiktok.com/@first_inspires" target="_blank" aria-label="TikTok" rel="noopener"><svg width="21" height="24" viewbox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 9.83906C18.9356 9.84349 16.922 9.19907 15.2438 7.99688V16.3781C15.2433 17.9304 14.7689 19.4455 13.884 20.7208C12.9991 21.9961 11.7459 22.9708 10.292 23.5146C8.83813 24.0584 7.25287 24.1453 5.74825 23.7638C4.24363 23.3822 2.89139 22.5503 1.87237 21.3794C0.853351 20.2085 0.216138 18.7543 0.0459537 17.2114C-0.12423 15.6685 0.180728 14.1104 0.920044 12.7456C1.65936 11.3807 2.79778 10.2741 4.18306 9.57375C5.56834 8.87341 7.13443 8.61273 8.67188 8.82656V13.0406C7.96888 12.8193 7.21393 12.8258 6.51483 13.0591C5.81573 13.2925 5.20822 13.7407 4.77905 14.3399C4.34987 14.939 4.12099 15.6585 4.12506 16.3955C4.12913 17.1325 4.36596 17.8493 4.80173 18.4437C5.2375 19.0381 5.84993 19.4796 6.55157 19.7052C7.25321 19.9308 8.00818 19.9289 8.70869 19.6998C9.4092 19.4708 10.0194 19.0262 10.4522 18.4297C10.8851 17.8332 11.1183 17.1151 11.1188 16.3781V0H15.2438C15.2414 0.348874 15.2712 0.697221 15.3328 1.04063C15.4763 1.8061 15.7743 2.53427 16.2087 3.18065C16.6431 3.82704 17.2048 4.37804 17.8594 4.8C18.7911 5.4154 19.8834 5.74306 21 5.74219V9.83906Z" fill="white" /></svg></a></li>                        
+            <li><a href="https://www.facebook.com/FIRSTOfficial" target="_blank" aria-label="Facebook" rel="noopener"><svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 12C24 5.37187 18.6281 0 12 0C5.37188 0 0 5.37187 0 12C0 17.625 3.87656 22.35 9.10312 23.6484V15.6656H6.62812V12H9.10312V10.4203C9.10312 6.3375 10.95 4.44375 14.9625 4.44375C15.7219 4.44375 17.0344 4.59375 17.5734 4.74375V8.0625C17.2922 8.03437 16.8 8.01562 16.1859 8.01562C14.2172 8.01562 13.4578 8.76093 13.4578 10.6969V12H17.3766L16.7016 15.6656H13.4531V23.9109C19.3969 23.1937 24 18.1359 24 12Z" fill="white" /></svg></a></li>            
+            <li><a href="https://www.linkedin.com/company/first_2" target="_blank" aria-label="LinkedIn" rel="noopener"><svg width="21" height="22" viewbox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 0.5H1.49531C0.670312 0.5 0 1.17969 0 2.01406V19.9859C0 20.8203 0.670312 21.5 1.49531 21.5H19.5C20.325 21.5 21 20.8203 21 19.9859V2.01406C21 1.17969 20.325 0.5 19.5 0.5ZM6.34687 18.5H3.23438V8.47812H6.35156V18.5H6.34687ZM4.79062 7.10938C3.79219 7.10938 2.98594 6.29844 2.98594 5.30469C2.98594 4.31094 3.79219 3.5 4.79062 3.5C5.78437 3.5 6.59531 4.31094 6.59531 5.30469C6.59531 6.30312 5.78906 7.10938 4.79062 7.10938ZM18.0141 18.5H14.9016V13.625C14.9016 12.4625 14.8781 10.9672 13.2844 10.9672C11.6625 10.9672 11.4141 12.2328 11.4141 13.5406V18.5H8.30156V8.47812H11.2875V9.84687H11.3297C11.7469 9.05937 12.7641 8.22969 14.2781 8.22969C17.4281 8.22969 18.0141 10.3062 18.0141 13.0062V18.5Z" fill="white" /></svg></a></li>
+            <li><a href="https://www.youtube.com/user/FIRSTWorldTube" target="_blank" aria-label="YouTube" rel="noopener"><svg width="27" height="18" viewbox="0 0 27 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.768 2.81719C25.4727 1.70625 24.6055 0.834375 23.5039 0.539062C21.507 0 13.5008 0 13.5008 0C13.5008 0 5.49453 0 3.49766 0.539062C2.39609 0.834375 1.52891 1.70625 1.23359 2.81719C0.699219 4.82812 0.699219 9.01875 0.699219 9.01875C0.699219 9.01875 0.699219 13.2094 1.23359 15.2203C1.52891 16.3313 2.39609 17.1656 3.49766 17.4609C5.49453 18 13.5008 18 13.5008 18C13.5008 18 21.507 18 23.5039 17.4609C24.6055 17.1656 25.4727 16.3266 25.768 15.2203C26.3023 13.2094 26.3023 9.01875 26.3023 9.01875C26.3023 9.01875 26.3023 4.82812 25.768 2.81719ZM10.8852 12.825V5.2125L17.5742 9.01875L10.8852 12.825Z" fill="white" /></svg></a></li>
+          </ul>
+        </div>        
+      </div>
+      
+      <div class="form">
+        <span id="hs_cos_wrapper_u4m-footer_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" style="" data-hs-cos-general-type="widget" data-hs-cos-type="form"><h3 id="hs_cos_wrapper_u4m-footer__title" class="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text"></h3>
+
+<div id="hs_form_target_u4m-footer_" class="hs-form-html" data-form-id="d9cb5f92-944b-4fe6-9824-1e6296f75c5d" data-portal-id="1747660" data-region="na1"></div>
+
+
+
+
+
+</span>        
+      </div>
+    </div>
+    
+    <!---->
+    <hr>
+    <!---->
+    
+    <div class="utility-footer">
+      <div class="utility-menu">
+        <div id="hs_menu_wrapper_u4m-footer_" class="hs-menu-wrapper active-branch no-flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="default" data-menu-id="191602195888" aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.firstinspires.org/privacy-policy" role="menuitem">Privacy Policy</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.firstinspires.org/website-terms-of-use" role="menuitem">Terms of Use</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.firstinspires.org/website-notices" role="menuitem">Website Notices</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.firstinspires.org/payment-terms-refund-policy" role="menuitem">Payment Terms &amp; Refund Policy</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://www.firstinspires.org/programs/youth-protection-program" role="menuitem">Report a Concern</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://help.firstinspires.org/" role="menuitem" target="_blank" rel="noopener">Help Center</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="https://firstinspires.org/sitemap.xml" role="menuitem" target="_blank" rel="noopener">Sitemap</a></li>
+ </ul>
+</div>      
+      </div>
+      <p class="utility-text">
+        © 2026 For Inspiration and Recognition of Science and Technology (<i>FIRST</i>). A 501(c)(3) nonprofit organization (EIN# 22-2990908)
+      </p>
+    </div>
+  </div>
+
+</footer></div>
+        
+    
+
+
+<!-- HubSpot performance collection script -->
+<script defer src="/hs/hsstatic/content-cwv-embed/static-1.1293/embed.js"></script>
+<script src="https://www.firstinspires.org/hubfs/hub_generated/template_assets/1/191560284075/1767817877556/template_main.min.js"></script>
+<script>
+var hsVars = hsVars || {}; hsVars['language'] = 'en';
+</script>
+
+<script src="/hs/hsstatic/cos-i18n/static-1.53/bundles/project.js"></script>
+<script src="https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/scripts/jquery-3.7.1.min.js"></script>
+<script src="https://cdn2.hubspot.net/hubfs/302335/unified3/libraries/hubspot.search.min.js"></script>
+<script src="https://cdn2.hubspot.net/hubfs/302335/unified3/libraries/jquery.nb.offscreenMenuToggle.min.js"></script>
+<script src="https://cdn2.hubspot.net/hubfs/302335/unified3/libraries/aos3.min.js"></script>
+<script src="https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/unified-assets/lazyload.min.js"></script>
+<script src="https://cdn2.hubspot.net/hubfs/302335/unified3/libraries/js.cookie.min.js"></script>
+<script src="https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/hc-sticky.js"></script>
+<script src="https://www.firstinspires.org/hubfs/hub_generated/module_assets/1/191558704136/1765464113853/module_u4m-header.min.js"></script>
+
+  <script>
+    (function() {
+      if (document.body) {
+        document.body.classList.add("has-top-nav");
+      } else {
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.classList.add("has-top-nav");
+        });
+      }
+    })();
+  </script>
+  
+
+  <script data-hs-allowed="true">
+    ((d=document,q='querySelectorAll',l='hs-form-html',m='script',b='/_hcms/forms/embed/v4/render-definition/ssr',u='https://js.hsforms.net/forms/embed/1747660.js') => {
+      const a = (t,i) => t.replace(/{{hs_form_instance_id_placeholder}}/g,i);
+      const i = (f,o) => {f.innerHTML=o;for(const s of f[q](m)){const n=d.createElement(m);for(const{name:e,value:t}of s.attributes)n.setAttribute(e,t);n.appendChild(d.createTextNode(s.innerHTML)),s.parentNode.replaceChild(n,s)}};
+      const j = (e,f) => {try{if(e.status === 404)return;}catch(_){}const n=f.cloneNode(true);n.classList.replace(l,'hs-form-frame');i(f,'<'+m+' src="'+u+'"></'+m+'>'+n.outerHTML);};
+      const r = (el,c=el.dataset) => {if(c.fetched)return;c.fetched=Date.now();fetch(`${b}/${c.portalId}/${c.formId}`).then((r) => r.text().then((t) => {i(el,a(t,el.id));c.loaded=Date.now();})).catch((e) => j(e,el));};
+      d[q]('.'+l).forEach((el) => r(el));
+    })();
+  </script>
+
+
+  <script data-hs-allowed="true">
+    ((el) => {
+      el && el.addEventListener('hs-form-event:on-ready', (e) => {
+      window.HubSpotFormsV4.getFormFromEvent(e).setExtraSubmissionMetadata({
+        
+        
+        
+        
+        
+        
+        
+      });
+    });
+    })(document.getElementById('hs_form_target_u4m-footer_'));
+  </script>
+
+
+
+<!-- Start of HubSpot Analytics Code -->
+<script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "standard-page"]);
+_hsq.push(["setCanonicalUrl", "https:\/\/www.firstinspires.org\/404"]);
+_hsq.push(["setPageId", ""]);
+_hsq.push(["setContentMetadata", {
+    "contentPageId": null,
+    "legacyPageId": null,
+    "contentFolderId": null,
+    "contentGroupId": null,
+    "abTestId": null,
+    "languageVariantId": null,
+    "languageCode": "en",
+    
+    
+}]);
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="/hs/scriptloader/1747660.js"></script>
+<!-- End of HubSpot Analytics Code -->
+
+
+<script type="text/javascript">
+var hsVars = {
+    render_id: "34904e1e-c060-4bd5-a102-f6890fa0ac0f",
+    ticks: 1767818593335,
+    page_id: 0,
+    
+    content_group_id: 0,
+    portal_id: 1747660,
+    app_hs_base_url: "https://app.hubspot.com",
+    cp_hs_base_url: "https://cp.hubspot.com",
+    language: "en",
+    analytics_page_type: "standard-page",
+    scp_content_type: "",
+    
+    analytics_page_id: "null",
+    category_id: 1,
+    folder_id: 0,
+    is_hubspot_user: false
+}
+</script>
+
+
+<script defer src="/hs/hsstatic/HubspotToolsMenu/static-1.432/js/index.js"></script>
+
+<script src="https://cdn.userway.org/widget.js" data-account="AEP8zTx4dO"></script>
+<!-- SaleForce Chat Button script -->
+<script type="text/javascript">
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'
+ 
+			embeddedservice_bootstrap.init(
+				'00DHr0000010f3R',
+				'FIRST_Messaging_Deployment',
+				'https://first360.my.site.com/ESWFIRSTMessagingDeploy1706209019204',
+				{
+					scrt2URL: 'https://first360.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type="text/javascript" src="https://first360.my.site.com/ESWFIRSTMessagingDeploy1706209019204/assets/js/bootstrap.min.js" onload="initEmbeddedMessaging()"></script>
+<!-- End Of SaleForce Chat Button script -->
+
+
+
+</body></html>

@@ -1,6 +1,6 @@
-# Statbotics API
+# FTC Insight API
 
-The Statbotics Python API queries the Statbotics backend and returns data in a JSON format. It is distributed via PyPI.
+The FTC Insight Python API queries the FTC Insight backend and returns data in a JSON format. It is distributed via PyPI.
 
 ## Testing
 

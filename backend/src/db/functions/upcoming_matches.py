@@ -1,15 +1,20 @@
 from datetime import datetime
 from typing import List, Optional, Tuple
 
-from sqlalchemy import func, text
+from sqlalchemy import case, func, text
 from sqlalchemy.orm import Session as SessionType
-from sqlalchemy_cockroachdb import run_transaction  # type: ignore
+from src.db.main import run_transaction
 
 from src.constants import CURR_YEAR
 from src.db.main import Session
 from src.db.models.event import EventORM
 from src.db.models.match import Match, MatchORM
 from src.types.enums import EventStatus
+
+
+def sqlite_greatest(col1, col2):
+    """SQLite doesn't have GREATEST, use CASE WHEN instead"""
+    return case((col1 > col2, col1), else_=col2)
 
 
 def get_upcoming_matches(
@@ -34,7 +39,7 @@ def get_upcoming_matches(
             EventORM.state,
             EventORM.district,
         ).add_columns(
-            func.greatest(MatchORM.epa_red_score_pred, MatchORM.epa_blue_score_pred).label("max_epa"),  # type: ignore
+            sqlite_greatest(MatchORM.epa_red_score_pred, MatchORM.epa_blue_score_pred).label("max_epa"),  # type: ignore
             (MatchORM.epa_red_score_pred + MatchORM.epa_blue_score_pred).label("sum_epa"),  # type: ignore
             func.abs(MatchORM.epa_red_score_pred - MatchORM.epa_blue_score_pred).label("diff_epa"),  # type: ignore
         )

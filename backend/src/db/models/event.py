@@ -8,7 +8,7 @@ from src.breakdown import key_to_name
 from src.db.main import Base
 from src.db.models.main import Model, ModelORM, generate_attr_class
 from src.db.models.types import MI, MOF, MOI, MOS, MS, values_callable
-from src.types.enums import EventStatus, EventType
+from src.types.enums import EventStatus, FTCEventType
 
 
 class EventORM(Base, ModelORM):
@@ -30,8 +30,8 @@ class EventORM(Base, ModelORM):
     start_date: MS = mapped_column(String(10))
     end_date: MS = mapped_column(String(10))
 
-    type: Mapped[EventType] = mapped_column(
-        Enum(EventType, values_callable=values_callable)
+    type: Mapped[FTCEventType] = mapped_column(
+        Enum(FTCEventType, values_callable=values_callable)
     )
     week: MI = mapped_column(Integer)
 

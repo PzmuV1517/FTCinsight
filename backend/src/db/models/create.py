@@ -2,7 +2,7 @@ from typing import List, Tuple
 
 from src.db.models.match import Match
 from src.db.models.team_match import TeamMatch
-from src.tba.read_tba import MatchDict
+from src.ftc.types import MatchDict
 from src.types.enums import CompLevel
 
 
