@@ -33,3 +33,6 @@ cache/
 .vscode/
 *.swp
 *.swo
+
+# Database
+backend/data/ftcinsight.db

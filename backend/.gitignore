@@ -6,3 +6,5 @@ cache
 seed_db.py
 firebase_key.json
 firebase-service-account.json
+/data
+/data/ftcinsight.db
