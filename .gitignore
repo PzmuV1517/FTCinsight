@@ -36,3 +36,4 @@ cache/
 
 # Database
 backend/data/ftcinsight.db
+backend/data/*.db
