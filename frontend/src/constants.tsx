@@ -11,7 +11,7 @@ export const BUCKET_URL = PROD
   : "";
 
 // FTC Season Configuration
-export const CURR_YEAR = 2026; // DECODE season (2025-2026)
+export const CURR_YEAR = 2025; // INTO THE DEEP season (2024-2025)
 export const CURR_WEEK = 1;
 
 // Minimum FTC team number (teams start from higher numbers in FTC)
@@ -21,29 +21,7 @@ export const MIN_TEAM_NUM = 1;
 export const PLACEHOLDER_TEAMS = Array.from({ length: 30 }, (_, i) => 99970 + i);
 
 // Years with detailed score breakdowns
-export const BREAKDOWN_YEARS = [2019, 2020, 2021, 2022, 2023, 2024];
-
-// FTC Tiebreaker Point names by season (equivalent to FRC's RP_NAMES)
-// FTC uses TBP (Tie Breaker Points) instead of Ranking Points
-export const RP_NAMES: { [key: number]: string[] } = {
-  2026: ["TBP1", "TBP2", "TBP3"], // Future season
-  2025: ["TBP1", "TBP2", "TBP3"], // INTO THE DEEP (current)
-  2024: ["TBP1", "TBP2"], // INTO THE DEEP
-  2023: ["TBP1", "TBP2"], // CENTERSTAGE
-  2022: ["TBP1", "TBP2"], // POWERPLAY
-  2021: ["TBP1", "TBP2"], // FREIGHT FRENZY
-  2020: ["TBP1", "TBP2"], // ULTIMATE GOAL
-  2019: ["TBP1", "TBP2"], // SKYSTONE
-  2018: ["TBP1", "TBP2"], // ROVER RUCKUS
-  2017: ["TBP1", "TBP2"], // RELIC RECOVERY
-  2016: ["TBP1", "TBP2"], // VELOCITY VORTEX
-};
-
-// Helper to safely get RP names with fallback
-export const getRPName = (year: number, index: number): string => {
-  const names = RP_NAMES[year] || RP_NAMES[2025] || ["TBP1", "TBP2", "TBP3"];
-  return names[index] || `TBP${index + 1}`;
-};
+export const BREAKDOWN_YEARS = [2019, 2020, 2021, 2022, 2023, 2024, 2025];
 
 export const CORRECT_COLOR = "#86CFA3";
 export const INCORRECT_COLOR = "#F77F84";

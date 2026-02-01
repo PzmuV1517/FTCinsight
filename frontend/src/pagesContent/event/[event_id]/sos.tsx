@@ -268,7 +268,7 @@ const SosSection = ({ eventId, data }: { eventId: string; data: EventData }) => 
         <strong>The simulation happens live and takes a few seconds to load.</strong> Generally,
         lower scores mean easier schedules, and higher scores mean harder schedules. Read more about
         the methodology{" "}
-        <Link href="/blog/sos" className="text_link">
+        <Link href="/resources/sos" className="text_link">
           here
         </Link>
         .

@@ -55,7 +55,7 @@ const BubbleChart = ({
 
   const [columns, setColumns] = useState({
     x: year >= 2016 ? "Teleop" : "Total EPA",
-    y: year >= 2016 ? "Auto + Endgame" : "Wins",
+    y: year >= 2016 ? "Auto" : "Wins",
     z: "Constant",
   });
 

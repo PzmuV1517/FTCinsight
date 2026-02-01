@@ -1,4 +1,6 @@
+import asyncio
 import platform
+from contextlib import asynccontextmanager
 from typing import Any, Callable
 
 from dotenv import load_dotenv  # type: ignore
@@ -32,6 +34,51 @@ SETUP
 
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 
+# Background task state
+background_task = None
+UPDATE_INTERVAL_SECONDS = 60  # Update every minute
+
+
+async def periodic_update():
+    """Background task that updates current season data periodically."""
+    from src.data.ftc_pipeline import update_current_season
+    
+    while True:
+        try:
+            await asyncio.sleep(UPDATE_INTERVAL_SECONDS)
+            print(f"[Auto-Update] Starting periodic update...")
+            # Run in thread pool to not block async loop
+            loop = asyncio.get_event_loop()
+            await loop.run_in_executor(None, lambda: update_current_season(cache=False))
+            print(f"[Auto-Update] Periodic update complete")
+        except asyncio.CancelledError:
+            print("[Auto-Update] Background task cancelled")
+            break
+        except Exception as e:
+            print(f"[Auto-Update] Error during periodic update: {e}")
+            # Continue running even if there's an error
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Manage application lifespan - start/stop background tasks."""
+    global background_task
+    
+    # Startup: start background update task
+    print("[Startup] Starting periodic update task (every 60 seconds)")
+    background_task = asyncio.create_task(periodic_update())
+    
+    yield
+    
+    # Shutdown: cancel background task
+    if background_task:
+        print("[Shutdown] Cancelling periodic update task")
+        background_task.cancel()
+        try:
+            await background_task
+        except asyncio.CancelledError:
+            pass
+
 
 app = FastAPI(
     title="FTC Insight REST API",
@@ -39,6 +86,7 @@ app = FastAPI(
     version="3.0.0",
     # dependencies=[Security(get_api_key)],
     swagger_ui_parameters={"persistAuthorization": True},
+    lifespan=lifespan,
 )
 
 # Removed CORS to enable website integrations

@@ -8,7 +8,7 @@ import InsightsTable from "../../components/Table/InsightsTable";
 import { EventLink, TeamLink, formatCell, formatEPACell } from "../../components/Table/shared";
 import { filterData } from "../../components/filter";
 import { FilterBar } from "../../components/filterBar";
-import { CURR_YEAR, RP_NAMES } from "../../constants";
+import { CURR_YEAR } from "../../constants";
 import { APITeamYear } from "../../types/api";
 import { TeamYearsData } from "../../types/data";
 import { round, truncate } from "../../utils";
@@ -22,10 +22,6 @@ export type TeamYearInsights = {
   unitless_epa: number; // used for current year
   auto_epa: number | string;
   teleop_epa: number | string;
-  endgame_epa: number | string;
-  rp_1_epa: number | string;
-  rp_2_epa: number | string;
-  rp_3_epa: number | string;
   next_event_key?: string;
   next_event_name?: string;
   next_event_week?: number | string;
@@ -89,10 +85,6 @@ const PageTeamInsightsTable = ({
         unitless_epa: round(teamYear?.epa?.unitless, 0) ?? 0,
         auto_epa: round(teamYear?.epa?.breakdown?.auto_points, 1) ?? "N/A",
         teleop_epa: round(teamYear?.epa?.breakdown?.teleop_points, 1) ?? "N/A",
-        endgame_epa: round(teamYear?.epa?.breakdown?.endgame_points, 1) ?? "N/A",
-        rp_1_epa: round(teamYear?.epa?.breakdown?.rp_1, 2) ?? "N/A",
-        rp_2_epa: round(teamYear?.epa?.breakdown?.rp_2, 2) ?? "N/A",
-        rp_3_epa: round(teamYear?.epa?.breakdown?.rp_3, 2) ?? "N/A",
         next_event_key: teamYear?.competing?.next_event_key ?? "N/A",
         next_event_name: teamYear?.competing?.next_event_name ?? "N/A",
         next_event_week: teamYear?.competing?.next_event_week ?? "N/A",
@@ -140,12 +132,6 @@ const PageTeamInsightsTable = ({
             formatEPACell(data.year.percentiles.teleop_points, info, disableHighlight),
           header: "Teleop EPA",
         }),
-      year >= 2016 &&
-        columnHelper.accessor("endgame_epa", {
-          cell: (info) =>
-            formatEPACell(data.year.percentiles.endgame_points, info, disableHighlight),
-          header: "Endgame EPA",
-        }),
       columnHelper.accessor("record", {
         cell: (info) => formatCell(info),
         header: "Record",
@@ -192,27 +178,6 @@ const PageTeamInsightsTable = ({
           cell: (info) =>
             formatEPACell(data.year.percentiles.teleop_points, info, disableHighlight),
           header: "Teleop EPA",
-        }),
-      year >= 2016 &&
-        detailedColumnHelper.accessor("endgame_epa", {
-          cell: (info) =>
-            formatEPACell(data.year.percentiles.endgame_points, info, disableHighlight),
-          header: "Endgame EPA",
-        }),
-      year >= 2016 &&
-        detailedColumnHelper.accessor("rp_1_epa", {
-          cell: (info) => formatEPACell(data.year.percentiles.rp_1, info, disableHighlight),
-          header: RP_NAMES[year][0],
-        }),
-      year >= 2016 &&
-        detailedColumnHelper.accessor("rp_2_epa", {
-          cell: (info) => formatEPACell(data.year.percentiles.rp_2, info, disableHighlight),
-          header: RP_NAMES[year][1],
-        }),
-      year >= 2025 &&
-        detailedColumnHelper.accessor("rp_3_epa", {
-          cell: (info) => formatEPACell(data.year.percentiles.rp_3, info, disableHighlight),
-          header: RP_NAMES[year][2],
         }),
       detailedColumnHelper.accessor("record", {
         cell: (info) => formatCell(info),

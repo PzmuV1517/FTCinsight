@@ -32,7 +32,7 @@ AUTH_KEY_BLACKLIST: List[str] = []
 
 # CONFIG
 
-CURR_YEAR = 2026  # FTC DECODE season (2025-2026)
+CURR_YEAR = 2025  # FTC INTO THE DEEP season (2024-2025)
 CURR_WEEK = 1
 
 # FTC Season range (FTC data available from 2016 onward with good coverage)

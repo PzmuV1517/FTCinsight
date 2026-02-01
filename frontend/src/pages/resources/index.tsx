@@ -9,21 +9,27 @@ export const metadata = {
 const Page = () => {
   const posts = [
     {
+      title: "Acknowledgments",
+      lead: "FTC Insight is built upon the open-source Statbotics project. We thank the Statbotics team for making their code freely available for modification and reuse.",
+      url: "/resources/acknowledgments",
+      date: "2025-01-01",
+    },
+    {
       title: "The EPA Model",
       lead: "The Expected Points Added (EPA) model builds upon the Elo rating system, but transforms ratings to point units and makes several modifications.",
-      url: "/blog/epa",
+      url: "/resources/epa",
       date: "2023-01-09",
     },
     {
       title: "The EPA Model: A Gentle Introduction",
       lead: "The math behind EPA can be a bit confusing. This page will help you understand the EPA model, how it works, and how to best use it. No math required!",
-      url: "/blog/intro",
+      url: "/resources/intro",
       date: "2023-03-16",
     },
     {
       title: "Strength of Schedule",
       lead: "How can we use EPA to measure strength of schedule? We propose three metrics and briefly explore some results.",
-      url: "/blog/sos",
+      url: "/resources/sos",
       date: "2023-03-23",
     },
   ];

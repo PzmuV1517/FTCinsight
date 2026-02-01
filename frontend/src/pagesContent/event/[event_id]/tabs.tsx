@@ -6,11 +6,8 @@ import Select from "react-select";
 import { useRouter } from "next/navigation";
 
 import BubbleChart from "../../../components/Figures/Bubble";
-import BreakdownTable from "../../../components/Table/BreakdownTable";
 import {
-  BREAKDOWN_YEARS,
   CURR_YEAR,
-  RP_NAMES,
   divisionToMainEvent,
   mainEventToDivisions,
 } from "../../../constants";
@@ -31,21 +28,6 @@ const Tabs = ({ eventId, year, data }: { eventId: string; year: number; data: Ev
     [eventId, data]
   );
 
-  const MemoizedBreakdownTable = useMemo(
-    () =>
-      BREAKDOWN_YEARS.includes(year) && (
-        <div className="w-full flex flex-col justify-center items-center">
-          <BreakdownTable
-            year={year}
-            yearData={data.year}
-            data={data.team_events}
-            csvFilename={`${data.event.key}_epa_breakdown.csv`}
-          />
-        </div>
-      ),
-    [year, data]
-  );
-
   const MemoizedBubbleChart = useMemo(
     () => (
       <BubbleChart
@@ -61,9 +43,6 @@ const Tabs = ({ eventId, year, data }: { eventId: string; year: number; data: Ev
             year >= 2016 && "Auto",
             year >= 2016 && "Teleop",
             year >= 2016 && "Endgame",
-            year >= 2016 && "Auto + Endgame",
-            year >= 2016 && RP_NAMES?.[year]?.[0] && `${RP_NAMES[year][0]}`,
-            year >= 2016 && RP_NAMES?.[year]?.[1] && `${RP_NAMES[year][1]}`,
             "Rank",
             "RPs / Match",
           ].filter(Boolean) as string[]
@@ -108,7 +87,6 @@ const Tabs = ({ eventId, year, data }: { eventId: string; year: number; data: Ev
 
   let tabs = [
     { title: "Insights", content: MemoizedInsightsTable },
-    BREAKDOWN_YEARS.includes(year) && { title: "Breakdown", content: MemoizedBreakdownTable },
     { title: "Bubble Chart", content: MemoizedBubbleChart },
     qualsN > 0 && { title: "Qual Matches", content: MemoizedQualMatchSection },
     elimsN > 0 && { title: "Alliances", content: MemoizedAlliancesSection },

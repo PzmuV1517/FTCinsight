@@ -1,9 +1,6 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { BsTwitch } from "react-icons/bs";
-
-import Link from "next/link";
 
 import { createColumnHelper } from "@tanstack/react-table";
 
@@ -29,7 +26,6 @@ export type EventInsights = {
   epa_top8: number;
   epa_top24: number;
   epa_mean: number;
-  video: string;
 };
 
 const columnHelper = createColumnHelper<EventInsights>();
@@ -57,7 +53,6 @@ const EventTable = ({ name, data }: { name: string; data: EventsData }) => {
         epa_top8: round(event.epa.top_8, 1) || 0,
         epa_top24: round(event.epa.top_24, 1) || 0,
         epa_mean: round(event.epa.mean, 1) || 0,
-        video: `https://www.thebluealliance.com/gameday/${event.key}` || "",
       };
     })
     .sort((a, b) => b.epa_mean - a.epa_mean);
@@ -65,23 +60,6 @@ const EventTable = ({ name, data }: { name: string; data: EventsData }) => {
   const columns = useMemo<any>(
     () =>
       [
-        name === "Ongoing" &&
-          columnHelper.accessor("video", {
-            cell: (info) => (
-              <div className="w-16 md:w-20 mx-auto h-full flex justify-center items-center">
-                <Link
-                  href={info.getValue()}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="text-sm"
-                  style={{ color: "#9146FD" }}
-                >
-                  <BsTwitch size={20} />
-                </Link>
-              </div>
-            ),
-            header: "Video",
-          }),
         columnHelper.accessor("name", {
           cell: (info) => EventLink({ key: info.row.original.event_key, event: info.getValue() }),
           header: "Name",
@@ -118,23 +96,6 @@ const EventTable = ({ name, data }: { name: string; data: EventsData }) => {
   const detailedColumns = useMemo<any>(
     () =>
       [
-        name === "Ongoing" &&
-          columnHelper.accessor("video", {
-            cell: (info) => (
-              <div className="w-16 md:w-20 mx-auto h-full flex justify-center items-center">
-                <Link
-                  href={info.getValue()}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  className="text-sm"
-                  style={{ color: "#9146FD" }}
-                >
-                  <BsTwitch size={20} />
-                </Link>
-              </div>
-            ),
-            header: "Video",
-          }),
         columnHelper.accessor("name", {
           cell: (info) => EventLink({ key: info.row.original.event_key, event: info.getValue() }),
           header: "Name",

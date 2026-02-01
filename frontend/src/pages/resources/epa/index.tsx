@@ -18,19 +18,6 @@ const Page = () => {
       title="The EPA Model"
       lead="The Expected Points Added (EPA) model builds upon the Elo rating system, but transforms ratings to point units and makes several modifications"
     >
-      <h3>Motivation</h3>
-      <p>
-        Prior to 2023, Statbotics displayed both Elo and OPR ratings for each team. OPR was
-        separated into Auto, Teleop, and Endgame components, while sorting was primarily done on
-        Elo, the more predictive model. Match predictions were made by averaging the win
-        probabilities from each model, which slightly outperformed either model individually. The
-        complexity of this setup was not ideal, and resulted in reduced data freshness and
-        inconsistent sorting/component contributions. The EPA model was developed to replace both
-        Elo and OPR with a single unified system. At a high level, the EPA model converts Elo into
-        point contributions, and then makes several modifications to improve accuracy and
-        interpretability. In this article, I&apos;ll dive into the details of the EPA model, and how
-        it compares to existing approaches.
-      </p>
       <h3>Derivation from Elo</h3>
       <p>
         As alluded to above, the EPA model builds upon the Elo rating system. But what is Elo, and

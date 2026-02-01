@@ -41,10 +41,10 @@ export default function Home() {
             Explore Teams
           </Link>
           <Link
-            href="/blog"
+            href="/resources"
             className="text-sm sm:text-base py-2 px-4 sm:px-6 ml-4 rounded-sm bg-gray-100 hover:bg-gray-200 text-gray-800"
           >
-            Read Blog
+            Resources
           </Link>
         </div>
       </div>

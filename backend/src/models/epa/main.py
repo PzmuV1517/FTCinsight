@@ -166,7 +166,7 @@ class EPA(Model):
                 margin = EPA.margin_func(self.year_num, self.counts[t])
                 err = (my_err - margin * opp_err) / (1 + margin)
                 attrib = post_process_attrib(
-                    self.year_obj, self.epas[t].mean, err / self.num_teams, match.elim
+                    self.year_num, err / self.num_teams
                 )
                 out[t] = Attribution(attrib)
 

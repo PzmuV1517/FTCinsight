@@ -1,7 +1,6 @@
 import React from "react";
 
 import MatchTable from "../../../components/MatchTable";
-import { RP_NAMES } from "../../../constants";
 import { EventData } from "../../../types/data";
 import { round } from "../../../utils";
 
@@ -19,45 +18,6 @@ const MatchSection = ({ year, quals, data }: { year: number; quals: boolean; dat
     }, 0);
   const accuracy = round((correctPreds / Math.max(N, 1)) * 100, 1);
 
-  const rp1CorrectPreds = matches
-    .filter((match) => !match.elim && match.status === "Completed")
-    .reduce((acc, match) => {
-      if (match.pred.red_rp_1 > 0.5 === match?.result?.red_rp_1 > 0.5) {
-        acc = acc + 1;
-      }
-      if (match.pred.blue_rp_1 > 0.5 === match?.result?.blue_rp_1 > 0.5) {
-        acc = acc + 1;
-      }
-      return acc;
-    }, 0);
-  const rp1Accuracy = round((rp1CorrectPreds / (2 * Math.max(N, 1))) * 100, 1);
-
-  const rp2CorrectPreds = matches
-    .filter((match) => !match.elim && match.status === "Completed")
-    .reduce((acc, match) => {
-      if (match?.pred?.red_rp_2 > 0.5 === match?.result?.red_rp_2 > 0.5) {
-        acc = acc + 1;
-      }
-      if (match?.pred?.blue_rp_2 > 0.5 === match?.result?.blue_rp_2 > 0.5) {
-        acc = acc + 1;
-      }
-      return acc;
-    }, 0);
-  const rp2Accuracy = round((rp2CorrectPreds / (2 * Math.max(N, 1))) * 100, 1);
-
-  const rp3CorrectPreds = matches
-    .filter((match) => !match.elim && match.status === "Completed")
-    .reduce((acc, match) => {
-      if (match?.pred?.red_rp_3 > 0.5 === match?.result?.red_rp_3 > 0.5) {
-        acc = acc + 1;
-      }
-      if (match?.pred?.blue_rp_3 > 0.5 === match?.result?.blue_rp_3 > 0.5) {
-        acc = acc + 1;
-      }
-      return acc;
-    }, 0);
-  const rp3Accuracy = round((rp3CorrectPreds / (2 * Math.max(N, 1))) * 100, 1);
-
   return (
     <div className="flex flex-col">
       <div className="w-full text-2xl font-bold mb-4">Match Predictions</div>
@@ -65,10 +25,6 @@ const MatchSection = ({ year, quals, data }: { year: number; quals: boolean; dat
       {N > 0 && (
         <div>
           <strong>Accuracy: {accuracy}%</strong>
-          {quals &&
-            year >= 2016 &&
-            ` | ${RP_NAMES?.[year]?.[0]} Accuracy: ${rp1Accuracy}% | ${RP_NAMES?.[year]?.[1]} Accuracy: ${rp2Accuracy}%`}
-          {quals && year >= 2025 && ` | ${RP_NAMES?.[year]?.[2]} Accuracy: ${rp3Accuracy}%`}
         </div>
       )}
       <div className="w-full my-4 overflow-x-scroll scrollbar-hide">

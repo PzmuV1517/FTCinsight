@@ -3,10 +3,9 @@
 import React, { useMemo } from "react";
 
 import BubbleChart from "../../components/Figures/Bubble";
-import { BREAKDOWN_YEARS, CURR_YEAR, RP_NAMES } from "../../constants";
+import { CURR_YEAR } from "../../constants";
 import { TeamYearsData, emptyTeamYearsData } from "../../types/data";
 import TabsSection from "../shared/tabs";
-import BreakdownTable from "./breakdownTable";
 import FigureSection from "./figures";
 import InsightsTable from "./insightsTable";
 
@@ -35,19 +34,6 @@ const Tabs = ({
     [year, data, filters, setFilters]
   );
 
-  const MemoizedBreakdownTable = useMemo(
-    () =>
-      BREAKDOWN_YEARS.includes(year) && (
-        <BreakdownTable
-          year={year}
-          data={data || emptyTeamYearsData}
-          filters={filters}
-          setFilters={(newFilters) => setFilters({ ...filters, ...newFilters })}
-        />
-      ),
-    [year, data, filters, setFilters]
-  );
-
   const MemoizedBubbleChart = useMemo(
     () => (
       <BubbleChart
@@ -63,9 +49,6 @@ const Tabs = ({
             year >= 2016 && "Auto",
             year >= 2016 && "Teleop",
             year >= 2016 && "Endgame",
-            year >= 2016 && "Auto + Endgame",
-            year >= 2016 && RP_NAMES?.[year]?.[0] && `${RP_NAMES[year][0]}`,
-            year >= 2016 && RP_NAMES?.[year]?.[1] && `${RP_NAMES[year][1]}`,
             "Wins",
             "Win Rate",
           ].filter(Boolean) as string[]
@@ -82,7 +65,6 @@ const Tabs = ({
 
   const tabs = [
     { title: "Insights", content: MemoizedInsightsTable },
-    BREAKDOWN_YEARS.includes(year) && { title: "Breakdown", content: MemoizedBreakdownTable },
     { title: "Bubble Chart", content: MemoizedBubbleChart },
     { title: "Figures", content: MemoizedFigureSection },
   ].filter(Boolean);

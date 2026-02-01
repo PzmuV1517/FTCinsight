@@ -9,18 +9,16 @@ import { CellContext, createColumnHelper } from "@tanstack/react-table";
 import { APIYear, EPAPercentiles } from "../../types/api";
 import { classnames, truncate } from "../../utils";
 import Table from "./Table";
-import { CONDITIONAL_COLORS, getEPAColor, getRPColor } from "./shared";
+import { CONDITIONAL_COLORS, getEPAColor } from "./shared";
 
 export type Component = {
   name: string;
   red1: number | string;
   red2: number | string;
-  red3: number | string;
   redTotal: number | string;
   redActual: number | string;
   blue1: number | string;
   blue2: number | string;
-  blue3: number | string;
   blueTotal: number | string;
   blueActual: number | string;
 };
@@ -30,6 +28,15 @@ const columnHelper = createColumnHelper<Component>();
 // Copied from ./shared.tsx with minor changes
 
 const TeamLink = ({ team, num, year }: { team: number; num: number; year: number }) => {
+  // Handle undefined team numbers
+  if (!team && team !== 0) {
+    return (
+      <div className="w-24 h-full flex justify-center items-center">
+        <span>-</span>
+      </div>
+    );
+  }
+  
   return (
     <div className="w-24 h-full flex justify-center items-center">
       <Link href={`/team/${num}/${year}`} className="text_link">
@@ -58,19 +65,9 @@ const formatCell = (
         ? stats.percentiles.teleop_points
         : row === "Endgame"
         ? stats.percentiles.endgame_points
-        : row === "RP1"
-        ? stats.percentiles.rp_1
-        : row === "RP2"
-        ? stats.percentiles.rp_2
-        : row === "RP3"
-        ? stats.percentiles.rp_3
         : stats.percentiles.total_points;
 
-    if (row.includes("RP")) {
-      color = getRPColor(value);
-    } else {
-      color = getEPAColor(value, percentileStats, multiplier);
-    }
+    color = getEPAColor(value, percentileStats, multiplier);
   }
 
   return (
@@ -101,18 +98,13 @@ const MatchBreakdown = ({
         header: () => TeamLink({ team: teams[1], num: teams[1], year: stats.year }),
         enableSorting: false,
       }),
-      columnHelper.accessor("red3", {
-        cell: (info) => formatCell(stats, info),
-        header: () => TeamLink({ team: teams[2], num: teams[2], year: stats.year }),
-        enableSorting: false,
-      }),
       columnHelper.accessor("redTotal", {
-        cell: (info) => formatCell(stats, info, 3),
+        cell: (info) => formatCell(stats, info, 2),
         header: () => <span>Predicted</span>,
         enableSorting: false,
       }),
       columnHelper.accessor("redActual", {
-        cell: (info) => formatCell(stats, info, 3),
+        cell: (info) => formatCell(stats, info, 2),
         header: () => <span>Actual</span>,
         enableSorting: false,
       }),
@@ -122,28 +114,23 @@ const MatchBreakdown = ({
         enableSorting: false,
       }),
       columnHelper.accessor("blueActual", {
-        cell: (info) => formatCell(stats, info, 3),
+        cell: (info) => formatCell(stats, info, 2),
         header: () => <span>Actual</span>,
         enableSorting: false,
       }),
       columnHelper.accessor("blueTotal", {
-        cell: (info) => formatCell(stats, info, 3),
+        cell: (info) => formatCell(stats, info, 2),
         header: () => <span>Predicted</span>,
-        enableSorting: false,
-      }),
-      columnHelper.accessor("blue3", {
-        cell: (info) => formatCell(stats, info),
-        header: () => TeamLink({ team: teams[5], num: teams[5], year: stats.year }),
         enableSorting: false,
       }),
       columnHelper.accessor("blue2", {
         cell: (info) => formatCell(stats, info),
-        header: () => TeamLink({ team: teams[4], num: teams[4], year: stats.year }),
+        header: () => TeamLink({ team: teams[3], num: teams[3], year: stats.year }),
         enableSorting: false,
       }),
       columnHelper.accessor("blue1", {
         cell: (info) => formatCell(stats, info),
-        header: () => TeamLink({ team: teams[3], num: teams[3], year: stats.year }),
+        header: () => TeamLink({ team: teams[2], num: teams[2], year: stats.year }),
         enableSorting: false,
       }),
     ],

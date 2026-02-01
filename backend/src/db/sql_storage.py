@@ -174,7 +174,7 @@ def write_events(events: List[Dict[str, Any]]) -> int:
             try:
                 event_data["type"] = FTCEventType(event_type)
             except ValueError:
-                event_data["type"] = FTCEventType.REGIONAL
+                event_data["type"] = FTCEventType.QUALIFIER
     
     records = [_prepare_record(EventORM, e) for e in events]
     return _bulk_upsert(EventORM, records, ['key'])

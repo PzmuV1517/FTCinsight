@@ -115,28 +115,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex-grow" />
-        <div className="hidden md:inline dropdown dropdown-end dropdown-hover" tabIndex={0}>
-          <div className="h-10 flex items-center mr-4 cursor-pointer">
-            <p className="h-auto text-base text-gray-300 hover:text-gray-100 font-thin">API</p>
-          </div>
-          <ul
-            tabIndex={0}
-            className="h-auto w-40 dropdown-content p-2 rounded shadow-lg bg-white text-gray-800"
-          >
-            <li>
-              <Link href="/docs/rest">
-                <div className="w-36 py-1 text-sm text-center border-b-[1px]">REST API Docs</div>
-              </Link>
-            </li>
-            <li>
-              <Link href="/docs/python">
-                <div className="w-36 py-1 text-sm text-center">Python API Docs</div>
-              </Link>
-            </li>
-          </ul>
-        </div>
         <div className="hidden md:flex items-center text-base text-gray-300 hover:text-gray-100 font-thin mr-4">
-          <Link href="/blog">Blog</Link>
+          <Link href="/resources">Resources</Link>
         </div>
         <div className="dropdown dropdown-end dropdown-hover" tabIndex={0}>
           <BsThreeDots className="no_hover_icon mr-4 text-gray-300 hover:text-gray-100" />
@@ -146,7 +126,7 @@ const Navbar = () => {
           >
             <li>
               <Link
-                href="https://github.com/your-repo/ftcinsight"
+                href="https://github.com/PzmuV1517/FTCinsight"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -155,7 +135,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="https://github.com/your-repo/ftcinsight/issues"
+                href="https://github.com/PzmuV1517/FTCinsight/issues"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -190,8 +170,8 @@ const Navbar = () => {
         <Link href="/matches" className="ml-4" onClick={() => setToggle(false)}>
           Matches
         </Link>
-        <Link href="/blog" className="ml-4" onClick={() => setToggle(false)}>
-          Blog
+        <Link href="/resources" className="ml-4" onClick={() => setToggle(false)}>
+          Resources
         </Link>
         <div className="my-2 h-[1px] bg-gray-600" />
         <div className="mx-auto">

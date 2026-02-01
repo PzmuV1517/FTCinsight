@@ -19,7 +19,6 @@ const FiguresSection = ({
       "Total EPA": teamEvent?.epa?.breakdown?.total_points ?? 0,
       "Auto EPA": teamEvent?.epa?.breakdown?.auto_points ?? 0,
       "Teleop EPA": teamEvent?.epa?.breakdown?.teleop_points ?? 0,
-      "Endgame EPA": teamEvent?.epa?.breakdown?.endgame_points ?? 0,
       sortEpa: teamEvent?.epa?.breakdown?.total_points ?? 0,
     }))
     .sort((a, b) => b.sortEpa - a.sortEpa)
@@ -55,14 +54,14 @@ const FiguresSection = ({
         <BarChartNoLegend
           data={barData}
           indexBy="team"
-          keys={year >= 2016 ? ["Auto EPA", "Teleop EPA", "Endgame EPA"] : ["Total EPA"]}
+          keys={year >= 2016 ? ["Auto EPA", "Teleop EPA"] : ["Total EPA"]}
         />
       </div>
       <div className="w-full hidden md:flex">
         <BarChart
           data={barData}
           indexBy="team"
-          keys={year >= 2016 ? ["Auto EPA", "Teleop EPA", "Endgame EPA"] : ["Total EPA"]}
+          keys={year >= 2016 ? ["Auto EPA", "Teleop EPA"] : ["Total EPA"]}
         />
       </div>
       <div className="h-4" />

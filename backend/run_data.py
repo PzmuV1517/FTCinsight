@@ -63,6 +63,12 @@ def main():
         action='store_true',
         help='Test Firestore connection'
     )
+    parser.add_argument(
+        '--workers', '-w',
+        type=int,
+        default=10,
+        help='Number of parallel workers for event processing'
+    )
     
     args = parser.parse_args()
     
@@ -84,7 +90,7 @@ def main():
     elif args.season:
         for season in args.season:
             print(f"\nProcessing season {season}...")
-            result = process_season(season, cache=not args.no_cache)
+            result = process_season(season, cache=not args.no_cache, max_workers=args.workers)
             print(f"Season {season} complete: {result.get('team_years', 0)} teams processed")
     else:
         print("Processing all recent seasons (2022-2024)...")

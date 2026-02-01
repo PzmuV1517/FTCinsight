@@ -9,6 +9,7 @@ from fastapi import APIRouter, BackgroundTasks
 
 from src.constants import BACKEND_URL, CURR_YEAR
 from src.data.main import reset_all_years, update_curr_year, process_single_season
+from src.data.ftc_pipeline import update_live_events
 
 data_router = APIRouter()
 site_router = APIRouter()
@@ -38,6 +39,20 @@ async def update_curr_year_endpoint():
     """Incremental update of current season data"""
     update_curr_year(partial=True)
     return {"status": "success"}
+
+
+@data_router.get("/update_live")
+async def update_live_endpoint():
+    """Update only ongoing events for faster live updates"""
+    result = update_live_events()
+    return {"status": "success", "result": result}
+
+
+@data_router.get("/update_live/{year}")
+async def update_live_year_endpoint(year: int):
+    """Update only ongoing events for a specific season"""
+    result = update_live_events(year)
+    return {"status": "success", "result": result}
 
 
 @data_router.get("/process_season/{year}")

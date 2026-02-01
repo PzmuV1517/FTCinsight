@@ -6,7 +6,7 @@ import { createColumnHelper } from "@tanstack/react-table";
 
 import InsightsTable from "../../../components/Table/InsightsTable";
 import { TeamLink, formatCell, formatEPACell } from "../../../components/Table/shared";
-import { CURR_YEAR, RP_NAMES } from "../../../constants";
+import { CURR_YEAR } from "../../../constants";
 import { APITeamEvent } from "../../../types/api";
 import { EventData } from "../../../types/data";
 import { round, truncate } from "../../../utils";
@@ -22,9 +22,6 @@ export type TeamEventInsights = {
   auto_epa: number | string;
   teleop_epa: number | string;
   endgame_epa: number | string;
-  rp_1_epa: number | string;
-  rp_2_epa: number | string;
-  rp_3_epa: number | string;
 };
 
 export type DetailedTeamEventInsights = {
@@ -40,10 +37,6 @@ export type DetailedTeamEventInsights = {
   total_epa: number;
   auto_epa: number | string;
   teleop_epa: number | string;
-  endgame_epa: number | string;
-  rp_1_epa: number | string;
-  rp_2_epa: number | string;
-  rp_3_epa: number | string;
 };
 
 const columnHelper = createColumnHelper<TeamEventInsights>();
@@ -75,10 +68,6 @@ const PageEventInsightsTable = ({ eventId, data }: { eventId: string; data: Even
         total_epa: round(teamEvent?.epa?.breakdown?.total_points, 1) ?? 0,
         auto_epa: round(teamEvent?.epa?.breakdown?.auto_points, 1) ?? "N/A",
         teleop_epa: round(teamEvent?.epa?.breakdown?.teleop_points, 1) ?? "N/A",
-        endgame_epa: round(teamEvent?.epa?.breakdown?.endgame_points, 1) ?? "N/A",
-        rp_1_epa: round(teamEvent?.epa?.breakdown?.rp_1, 2) ?? "N/A",
-        rp_2_epa: round(teamEvent?.epa?.breakdown?.rp_2, 2) ?? "N/A",
-        rp_3_epa: round(teamEvent?.epa?.breakdown?.rp_3, 1) ?? "N/A",
         rank: teamEvent?.record?.qual?.rank ?? -1,
       };
     })
@@ -94,10 +83,6 @@ const PageEventInsightsTable = ({ eventId, data }: { eventId: string; data: Even
       total_epa: round(teamEvent?.epa?.breakdown?.total_points, 1) ?? 0,
       auto_epa: round(teamEvent?.epa?.breakdown?.auto_points, 1) ?? "N/A",
       teleop_epa: round(teamEvent?.epa?.breakdown?.teleop_points, 1) ?? "N/A",
-      endgame_epa: round(teamEvent?.epa?.breakdown?.endgame_points, 1) ?? "N/A",
-      rp_1_epa: round(teamEvent?.epa?.breakdown?.rp_1, 2) ?? "N/A",
-      rp_2_epa: round(teamEvent?.epa?.breakdown?.rp_2, 2) ?? "N/A",
-      rp_3_epa: round(teamEvent?.epa?.breakdown?.rp_3, 2) ?? "N/A",
       rank: teamEvent?.record?.qual?.rank ?? -1,
       rps: teamEvent?.record?.qual?.rps ?? 0,
       rps_per_match: teamEvent?.record?.qual?.rps_per_match.toFixed(2),
@@ -150,27 +135,6 @@ const PageEventInsightsTable = ({ eventId, data }: { eventId: string; data: Even
               formatEPACell(data.year.percentiles.teleop_points, info, disableHighlight),
             header: "Teleop EPA",
           }),
-        year >= 2016 &&
-          columnHelper.accessor("endgame_epa", {
-            cell: (info) =>
-              formatEPACell(data.year.percentiles.endgame_points, info, disableHighlight),
-            header: "Endgame EPA",
-          }),
-        year >= 2016 &&
-          columnHelper.accessor("rp_1_epa", {
-            cell: (info) => formatEPACell(data.year.percentiles.rp_1, info, disableHighlight),
-            header: `${RP_NAMES?.[data.year.year]?.[0]} EPA`,
-          }),
-        year >= 2016 &&
-          columnHelper.accessor("rp_2_epa", {
-            cell: (info) => formatEPACell(data.year.percentiles.rp_2, info, disableHighlight),
-            header: `${RP_NAMES?.[data.year.year]?.[1]} EPA`,
-          }),
-        year >= 2025 &&
-          columnHelper.accessor("rp_3_epa", {
-            cell: (info) => formatEPACell(data.year.percentiles.rp_3, info, disableHighlight),
-            header: `${RP_NAMES?.[data.year.year]?.[2]} EPA`,
-          }),
       ].filter(Boolean),
     [year, data, maxRank, disableHighlight]
   );
@@ -194,7 +158,17 @@ const PageEventInsightsTable = ({ eventId, data }: { eventId: string; data: Even
         maxRank > 0 &&
           detailedColumnHelper.accessor("rps_per_match", {
             cell: (info) => formatCell(info),
-            header: "Ranking Score",
+            header: "RP/Match",
+          }),
+        maxRank > 0 &&
+          detailedColumnHelper.accessor("rps", {
+            cell: (info) => formatCell(info),
+            header: "Total RPs",
+          }),
+        maxRank > 0 &&
+          detailedColumnHelper.accessor("record", {
+            cell: (info) => formatCell(info),
+            header: "Record",
           }),
         year >= CURR_YEAR &&
           detailedColumnHelper.accessor("unitless_epa", {
@@ -221,37 +195,6 @@ const PageEventInsightsTable = ({ eventId, data }: { eventId: string; data: Even
             cell: (info) =>
               formatEPACell(data.year.percentiles.teleop_points, info, disableHighlight),
             header: "Teleop EPA",
-          }),
-        year >= 2016 &&
-          detailedColumnHelper.accessor("endgame_epa", {
-            cell: (info) =>
-              formatEPACell(data.year.percentiles.endgame_points, info, disableHighlight),
-            header: "Endgame EPA",
-          }),
-        year >= 2016 &&
-          detailedColumnHelper.accessor("rp_1_epa", {
-            cell: (info) => formatEPACell(data.year.percentiles.rp_1, info, disableHighlight),
-            header: `${RP_NAMES?.[data.year.year]?.[0]} EPA`,
-          }),
-        year >= 2016 &&
-          detailedColumnHelper.accessor("rp_2_epa", {
-            cell: (info) => formatEPACell(data.year.percentiles.rp_2, info, disableHighlight),
-            header: `${RP_NAMES?.[data.year.year]?.[1]} EPA`,
-          }),
-        year >= 2025 &&
-          detailedColumnHelper.accessor("rp_3_epa", {
-            cell: (info) => formatEPACell(data.year.percentiles.rp_3, info, disableHighlight),
-            header: `${RP_NAMES?.[data.year.year]?.[2]} EPA`,
-          }),
-        maxRank > 0 &&
-          detailedColumnHelper.accessor("record", {
-            cell: (info) => formatCell(info),
-            header: "Record",
-          }),
-        maxRank > 0 &&
-          detailedColumnHelper.accessor("rps", {
-            cell: (info) => formatCell(info),
-            header: "RPs",
           }),
       ].filter(Boolean),
     [year, data, maxRank, disableHighlight]

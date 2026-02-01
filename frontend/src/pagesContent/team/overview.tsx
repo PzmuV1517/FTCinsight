@@ -136,14 +136,9 @@ const OverviewSection = ({ teamYearData }: { teamYearData: TeamYearData | undefi
                   Category10Colors[1]
                 )}
                 {epaCard(
-                  teamYear?.epa?.breakdown?.endgame_points?.toFixed(1),
-                  "Endgame",
-                  Category10Colors[2]
-                )}
-                {epaCard(
                   teamYear?.epa?.breakdown?.total_points?.toFixed(1),
                   "Total",
-                  Category10Colors[3]
+                  Category10Colors[2]
                 )}
               </>
             ) : (
@@ -261,14 +256,9 @@ const OverviewSection = ({ teamYearData }: { teamYearData: TeamYearData | undefi
                       Category10Colors[1]
                     )}
                     {epaCard(
-                      event?.epa?.breakdown?.endgame_points?.toFixed(1),
-                      "Endgame",
-                      Category10Colors[2]
-                    )}
-                    {epaCard(
                       event?.epa?.breakdown?.total_points?.toFixed(1),
                       "Total",
-                      Category10Colors[3]
+                      Category10Colors[2]
                     )}
                   </>
                 ) : (
